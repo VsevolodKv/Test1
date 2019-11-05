@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragment_today">
+
+
+
+    <fragment
+        android:id="@+id/fragment_today"
+        android:name="com.example.web.today.TodayFragment"
+        android:label="Fragment1">
+        <action
+            android:id="@+id/action_fragment_today_to_week_fragment"
+            app:destination="@id/week_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/details_fragment"
+        android:name="com.example.web.detailsFragment.DetailsFragment"
+        android:label="Fragment2">
+
+        <action
+            android:id="@+id/action_details_fragment_to_week_fragment"
+            app:destination="@id/week_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/week_fragment"
+        android:name="com.example.web.weekFragment.WeekFragment"
+        android:label="Fragment3">
+        <action
+            android:id="@+id/action_week_fragment_to_fragment_today"
+            app:destination="@id/fragment_today" />
+        <action
+            android:id="@+id/action_week_fragment_to_details_fragment"
+            app:destination="@id/details_fragment" />
+    </fragment>
+</navigation>

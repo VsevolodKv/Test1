@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/daytime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/dayImageViewDaytime"
+            android:layout_width="59dp"
+            android:layout_height="69dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dateTextView"
+            tools:srcCompat="@tools:sample/avatars[2]" />
+
+        <TextView
+            android:id="@+id/dateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:text="Дата :"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/dateInformationTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/dateTextView"
+            app:layout_constraintStart_toEndOf="@+id/dateTextView"
+            app:layout_constraintTop_toTopOf="@+id/dateTextView" />
+
+        <TextView
+            android:id="@+id/textTemperatureViewDaytime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Ощущаемая температура (°C) :"
+            app:layout_constraintStart_toEndOf="@+id/dayImageViewDaytime"
+            app:layout_constraintTop_toBottomOf="@+id/dateInformationTextView" />
+
+        <TextView
+            android:id="@+id/informationTemperatureTextViewDaytime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textTemperatureViewDaytime"
+            app:layout_constraintStart_toEndOf="@+id/textTemperatureViewDaytime"
+            app:layout_constraintTop_toTopOf="@+id/textTemperatureViewDaytime" />
+
+        <TextView
+            android:id="@+id/textWindSpeedViewDaytime"
+            android:layout_width="66dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:text="Скорость ветра (в м/с) "
+            app:layout_constraintStart_toEndOf="@+id/dayImageViewDaytime"
+            app:layout_constraintTop_toBottomOf="@+id/textTemperatureViewDaytime" />
+
+        <TextView
+            android:id="@+id/informationWindSpeedTextViewDaytime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textWindSpeedViewDaytime"
+            app:layout_constraintStart_toEndOf="@+id/textWindSpeedViewDaytime"
+            app:layout_constraintTop_toTopOf="@+id/textWindSpeedViewDaytime" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/night"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/dayImageViewNight"
+            android:layout_width="59dp"
+            android:layout_height="69dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars[2]" />
+
+        <TextView
+            android:id="@+id/textTemperatureViewNight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Ощущаемая температура (°C) :"
+            app:layout_constraintStart_toEndOf="@+id/dayImageViewNight"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/informationTemperatureTextViewNight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textTemperatureViewNight"
+            app:layout_constraintStart_toEndOf="@+id/textTemperatureViewNight"
+            app:layout_constraintTop_toTopOf="@+id/textTemperatureViewNight" />
+
+        <TextView
+            android:id="@+id/textWindSpeedViewNight"
+            android:layout_width="66dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:text="Скорость ветра (в м/с) "
+            app:layout_constraintStart_toEndOf="@+id/dayImageViewNight"
+            app:layout_constraintTop_toBottomOf="@+id/textTemperatureViewNight" />
+
+        <TextView
+            android:id="@+id/informationWindSpeedTextViewNight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textWindSpeedViewNight"
+            app:layout_constraintStart_toEndOf="@+id/textWindSpeedViewNight"
+            app:layout_constraintTop_toTopOf="@+id/textWindSpeedViewNight" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
