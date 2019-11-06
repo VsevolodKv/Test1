@@ -6,8 +6,6 @@ import androidx.lifecycle.ViewModel
 import com.example.web.model.WebModel
 import com.example.web.dataclasess.Fact
 import com.example.web.dataclasess.WeatherDetails
-import com.example.web.dataclasess.WeatherDetailsByDay
-import org.json.JSONObject
 
 class TodayViewModel : ViewModel() {
 

@@ -1,5 +1,6 @@
 package com.example.web.weekFragment
 
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -11,8 +12,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.web.BaseFragment
 import com.example.web.R
 import com.example.web.dataclasess.WeatherDetails
+import com.github.twocoffeesoneteam.glidetovectoryou.GlideToVectorYou
 import kotlinx.android.synthetic.main.fragment_week.*
-import java.lang.ref.WeakReference
 
 class WeekFragment : BaseFragment() {
 
@@ -54,7 +55,7 @@ class WeekFragment : BaseFragment() {
             recycler.apply {
                 layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
                 addItemDecoration(DividerItemDecoration(context, RecyclerView.VERTICAL))
-                adapter = DaysAdapter(weatherDetails.forecasts, WeakReference(activity)).apply {
+                adapter = DaysAdapter(weatherDetails.forecasts).apply {
                     onDayTimeSelected = { dayTime ->
                         val dataDaytime = Bundle().apply { putParcelable("data", dayTime) }
                         navController.navigate(R.id.details_fragment, dataDaytime)
@@ -62,6 +63,12 @@ class WeekFragment : BaseFragment() {
                     onNightTimeSelected = {nightTime ->
                         val dataNightTime = Bundle().apply { putParcelable("data", nightTime) }
                         navController.navigate(R.id.details_fragment, dataNightTime)
+                    }
+                    loadImage = {iconName, imageView ->
+                        GlideToVectorYou
+                            .init()
+                            .with(context)
+                            .load(Uri.parse("https://yastatic.net/weather/i/icons/blueye/color/svg/$iconName.svg"), imageView)
                     }
                 }
             }

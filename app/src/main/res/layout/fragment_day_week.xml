@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -16,126 +16,250 @@
 
         <ImageView
             android:id="@+id/dayImageViewDaytime"
-            android:layout_width="59dp"
-            android:layout_height="69dp"
+
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+
             android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
+
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dateTextView"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDaytime"
             tools:srcCompat="@tools:sample/avatars[2]" />
 
         <TextView
             android:id="@+id/dateTextView"
-            android:layout_width="wrap_content"
+
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
+
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            android:textSize="18dp"
             android:text="Дата :"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/dateInformationTextView"
-            android:layout_width="wrap_content"
+
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
+
+            android:layout_marginStart="8dp"
+
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18dp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/dateTextView"
             app:layout_constraintStart_toEndOf="@+id/dateTextView"
             app:layout_constraintTop_toTopOf="@+id/dateTextView" />
 
         <TextView
             android:id="@+id/textTemperatureViewDaytime"
-            android:layout_width="wrap_content"
+
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:text="Ощущаемая температура (°C) :"
+            android:layout_marginTop="8dp"
+
+            android:text="Ощущаемая\n температура (°C) :"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toTopOf="@+id/textConditionViewDaytime"
             app:layout_constraintStart_toEndOf="@+id/dayImageViewDaytime"
-            app:layout_constraintTop_toBottomOf="@+id/dateInformationTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/textViewDaytime" />
 
         <TextView
             android:id="@+id/informationTemperatureTextViewDaytime"
-            android:layout_width="wrap_content"
+
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+
             android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/textTemperatureViewDaytime"
             app:layout_constraintStart_toEndOf="@+id/textTemperatureViewDaytime"
             app:layout_constraintTop_toTopOf="@+id/textTemperatureViewDaytime" />
 
         <TextView
-            android:id="@+id/textWindSpeedViewDaytime"
-            android:layout_width="66dp"
-            android:layout_height="15dp"
+            android:id="@+id/textConditionViewDaytime"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
             android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
-            android:text="Скорость ветра (в м/с) "
+            android:layout_marginBottom="16dp"
+
+            android:text="Краткое описание:"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/dayImageViewDaytime"
             app:layout_constraintTop_toBottomOf="@+id/textTemperatureViewDaytime" />
 
         <TextView
-            android:id="@+id/informationWindSpeedTextViewDaytime"
-            android:layout_width="wrap_content"
+            android:id="@+id/informationConditionTextViewDaytime"
+
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            app:layout_constraintBottom_toBottomOf="@+id/textWindSpeedViewDaytime"
-            app:layout_constraintStart_toEndOf="@+id/textWindSpeedViewDaytime"
-            app:layout_constraintTop_toTopOf="@+id/textWindSpeedViewDaytime" />
+
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp"
+
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/dayImageViewDaytime"
+            app:layout_constraintTop_toBottomOf="@+id/textConditionViewDaytime" />
+
+        <TextView
+            android:id="@+id/textViewDaytime"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="8dp"
+
+            android:gravity="center"
+            android:text="Дневное время"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/dayImageViewDaytime"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/dayImageViewDaytime"
+            app:layout_constraintTop_toBottomOf="@+id/dateTextView" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+
+            android:background="@color/colorPrimaryDark"
+
+            app:layout_constraintBottom_toTopOf="@+id/textViewDaytime"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dateTextView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimaryDark"/>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/night"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
             android:id="@+id/dayImageViewNight"
-            android:layout_width="59dp"
-            android:layout_height="69dp"
+
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+
             android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
+
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewNight"
             tools:srcCompat="@tools:sample/avatars[2]" />
 
         <TextView
             android:id="@+id/textTemperatureViewNight"
-            android:layout_width="wrap_content"
+
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:text="Ощущаемая температура (°C) :"
+            android:layout_marginTop="8dp"
+
+            android:text="Ощущаемая\n температура (°C) :"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toTopOf="@+id/textConditionViewNight"
             app:layout_constraintStart_toEndOf="@+id/dayImageViewNight"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@+id/dayImageViewNight" />
 
         <TextView
             android:id="@+id/informationTemperatureTextViewNight"
-            android:layout_width="wrap_content"
+
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+
             android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/textTemperatureViewNight"
             app:layout_constraintStart_toEndOf="@+id/textTemperatureViewNight"
             app:layout_constraintTop_toTopOf="@+id/textTemperatureViewNight" />
 
         <TextView
-            android:id="@+id/textWindSpeedViewNight"
-            android:layout_width="66dp"
-            android:layout_height="15dp"
+            android:id="@+id/textConditionViewNight"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
             android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
-            android:text="Скорость ветра (в м/с) "
+            android:layout_marginBottom="16dp"
+
+            android:text="Краткое описание:"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/dayImageViewNight"
             app:layout_constraintTop_toBottomOf="@+id/textTemperatureViewNight" />
 
         <TextView
-            android:id="@+id/informationWindSpeedTextViewNight"
-            android:layout_width="wrap_content"
+            android:id="@+id/informationConditionTextViewNight"
+
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            app:layout_constraintBottom_toBottomOf="@+id/textWindSpeedViewNight"
-            app:layout_constraintStart_toEndOf="@+id/textWindSpeedViewNight"
-            app:layout_constraintTop_toTopOf="@+id/textWindSpeedViewNight" />
+
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp"
+
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/dayImageViewNight"
+            app:layout_constraintTop_toBottomOf="@+id/textConditionViewNight" />
+
+        <TextView
+            android:id="@+id/textViewNight"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="8dp"
+
+            android:gravity="center"
+            android:text="Ночьное время"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/dayImageViewNight"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/dayImageViewNight"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </LinearLayout>

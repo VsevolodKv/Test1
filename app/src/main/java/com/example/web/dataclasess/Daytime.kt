@@ -5,6 +5,7 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class Daytime(
+    val windDirDaytime: String,
     val humidityDaytime: String,
     val windSpeedDaytime: String,
     val feelsLikeDaytime: String,
@@ -17,6 +18,5 @@ data class Daytime(
     val pressureMmDaytime: String,
     val pressurePaDaytime: String,
     val precMmDaytime: String,
-    val precPeriodDaytime: String,
-    val precProbDaytime: String
+    val precPeriodDaytime: String
 ): Parcelable

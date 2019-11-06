@@ -8,9 +8,9 @@ import com.example.web.BaseFragment
 import com.example.web.R
 import com.example.web.dataclasess.Daytime
 import com.example.web.dataclasess.Night
+import com.example.web.getRusConditions
+import com.example.web.getRusWinDir
 import kotlinx.android.synthetic.main.fragment_details.*
-import kotlinx.android.synthetic.main.fragment_today.progressBar
-import kotlinx.android.synthetic.main.fragment_week.*
 
 class DetailsFragment : BaseFragment(){
 
@@ -41,10 +41,34 @@ class DetailsFragment : BaseFragment(){
     }
 
     private fun updateUI(daytime: Daytime){
-        humidity.text = daytime.humidityDaytime
+        humidityInformationTextViewDetails.text = daytime.humidityDaytime
+        conditionInformationTextViewDetails.text = getRusConditions(daytime.conditionDaytime)
+        tempMaxInformationTextViewDetails.text = daytime.tempMaxDaytime
+        windDirInformationTextViewDetails.text = getRusWinDir(daytime.windDirDaytime)
+        windSpeedInformationTextViewDetails.text = daytime.windSpeedDaytime
+        feelsLikInformationTextViewDetails.text = daytime.feelsLikeDaytime
+        tempMinInformationTextViewDetails.text = daytime.tempMinDaytime
+        tempAvgInformationTextViewDetails.text = daytime.tempAvgDaytime
+        windGustInformationTextViewDetails.text = daytime.windGustDaytime
+        pressureMmInformationTextViewDetails.text = daytime.pressureMmDaytime
+        pressurePaInformationTextViewDetails.text = daytime.pressurePaDaytime
+        precMmInformationTextViewDetails.text = daytime.precMmDaytime
+        precPeriodInformationTextViewDetails.text = daytime.precPeriodDaytime
     }
 
     private fun updateUI(night: Night){
-        humidity.text = night.humidityNight
+        humidityInformationTextViewDetails.text = night.humidityNight
+        conditionInformationTextViewDetails.text = getRusConditions(night.conditionNight)
+        tempMaxInformationTextViewDetails.text = night.tempMaxNight
+        windDirInformationTextViewDetails.text = getRusWinDir(night.windDirNight)
+        windSpeedInformationTextViewDetails.text = night.windSpeedNight
+        feelsLikInformationTextViewDetails.text = night.feelsLikeNight
+        tempMinInformationTextViewDetails.text = night.tempMinNight
+        tempAvgInformationTextViewDetails.text = night.tempAvgNight
+        windGustInformationTextViewDetails.text = night.windGustNight
+        pressureMmInformationTextViewDetails.text = night.pressureMmNight
+        pressurePaInformationTextViewDetails.text = night.pressurePaNight
+        precMmInformationTextViewDetails.text = night.precMmNight
+        precPeriodInformationTextViewDetails.text = night.precPeriodNight
     }
 }

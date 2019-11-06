@@ -7,14 +7,13 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat.getSystemService
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.ahmadrosid.svgloader.SvgLoader
 import com.example.web.BaseFragment
 import com.example.web.R
 import com.example.web.dataclasess.Fact
+import com.example.web.getRusConditions
+import com.github.twocoffeesoneteam.glidetovectoryou.GlideToVectorYou
 import kotlinx.android.synthetic.main.fragment_today.*
 
 class TodayFragment : BaseFragment() {
@@ -25,21 +24,20 @@ class TodayFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        details.setOnClickListener {
-//            if (isOnline()) {
+        if (isOnline()) {
+            details.setOnClickListener {
                 val intent = Intent(
                     Intent.ACTION_VIEW,
                     Uri.parse("https://yandex.by/pogoda/gomel?from=serp_title")
                 )
                 startActivity(intent)
-//            } else {
-//                Toast.makeText(
-//                    context,
-//                    "No connection",
-//                    Toast.LENGTH_LONG
-//                ).show()
-//            }
+            }
+        }else {
+            Toast.makeText(
+                context,
+                "No connection",
+                Toast.LENGTH_LONG
+            ).show()
         }
 
         weekInfo.setOnClickListener {
@@ -55,28 +53,45 @@ class TodayFragment : BaseFragment() {
             if (it) {
                 progressBar.visibility = View.VISIBLE
                 details.isClickable = false
+                weekInfo.isClickable = false
             } else {
                 progressBar.visibility = View.GONE
                 details.isClickable = true
+                weekInfo.isClickable = true
             }
         })
 
 
-        viewModel.factSubscription.observe(viewLifecycleOwner, Observer<Fact> { it ->
+        viewModel.factSubscription.observe(viewLifecycleOwner, Observer<Fact> { fact ->
 
-            textTemp.text = it.temp
-            humidity.text = it.humidity
-            windSpeed.text = it.windSpeed
+            if (fact != null) {
 
-            SvgLoader.pluck().with(activity).load(
-                "https://yastatic.net/weather/i/icons/blueye/color/svg/${it.icon}.svg",
-                image_today
-            )
+                tempTextView.text = fact.temp
+                humidity.text = fact.humidity
+                windSpeed.text = fact.windSpeed
+                feelsLikeInformationTextView.text = fact.feelsLike
+                conditionInformationTextView.text = getRusConditions(fact.condition)
+
+                GlideToVectorYou
+                    .init()
+                    .with(context)
+                    .load(
+                        Uri.parse("https://yastatic.net/weather/i/icons/blueye/color/svg/${fact.icon}.svg"),
+                        image_today
+                    )
+            } else {
+
+                Toast.makeText(
+                    activity,
+                    "There is no forecasts for now...",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
         })
     }
 
-//    private fun isOnline(): Boolean {
-//        val connectivityManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-//        return connectivityManager.activeNetworkInfo != null
-//    }
+    private fun isOnline(): Boolean {
+        val connectivityManager = context?.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        return connectivityManager.activeNetworkInfo != null
+    }
 }

@@ -6,14 +6,17 @@
     app:startDestination="@id/fragment_today">
 
 
-
     <fragment
         android:id="@+id/fragment_today"
         android:name="com.example.web.today.TodayFragment"
         android:label="Fragment1">
         <action
             android:id="@+id/action_fragment_today_to_week_fragment"
-            app:destination="@id/week_fragment" />
+            app:destination="@id/week_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
 
     <fragment
@@ -23,7 +26,11 @@
 
         <action
             android:id="@+id/action_details_fragment_to_week_fragment"
-            app:destination="@id/week_fragment" />
+            app:destination="@id/week_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
 
     <fragment
@@ -32,9 +39,17 @@
         android:label="Fragment3">
         <action
             android:id="@+id/action_week_fragment_to_fragment_today"
-            app:destination="@id/fragment_today" />
+            app:destination="@id/fragment_today"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
         <action
             android:id="@+id/action_week_fragment_to_details_fragment"
-            app:destination="@id/details_fragment" />
+            app:destination="@id/details_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
 </navigation>

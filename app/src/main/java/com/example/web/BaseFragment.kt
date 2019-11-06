@@ -20,7 +20,6 @@ abstract class BaseFragment : Fragment(){
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(getLayoutID(), container, false)
-        //TODO подробнее прочитать
     }
 
     @CallSuper

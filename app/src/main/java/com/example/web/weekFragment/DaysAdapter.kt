@@ -6,20 +6,19 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.ahmadrosid.svgloader.SvgLoader
 import com.example.web.R
 import com.example.web.dataclasess.Daytime
 import com.example.web.dataclasess.Night
 import com.example.web.dataclasess.WeatherDetailsByDay
-import java.lang.ref.WeakReference
+import com.example.web.getRusConditions
 
-class DaysAdapter(private val forecast: List<WeatherDetailsByDay>, private val activity: WeakReference<FragmentActivity?>):
+class DaysAdapter(private val forecast: List<WeatherDetailsByDay>):
     RecyclerView.Adapter<DaysAdapter.ViewHold>() {
 
     lateinit var onDayTimeSelected : (Daytime) -> Unit
     lateinit var onNightTimeSelected : (Night) -> Unit
+    lateinit var loadImage: (String, ImageView) -> Unit
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHold {
         val rootView =
@@ -34,12 +33,14 @@ class DaysAdapter(private val forecast: List<WeatherDetailsByDay>, private val a
         holder.apply {
             val dayByPosition = forecast[position]
             date.text = dayByPosition.date
-            loadImage(dayByPosition.dayInfo.daytime.iconViewDaytime, daytimeImage)
-            loadImage(dayByPosition.dayInfo.night.iconViewNight, nightImage)
+            if (::loadImage.isInitialized) {
+                loadImage.invoke(dayByPosition.dayInfo.daytime.iconViewDaytime, daytimeImage)
+                loadImage.invoke(dayByPosition.dayInfo.night.iconViewNight, nightImage)
+            }
             nightTemperature.text = dayByPosition.dayInfo.night.feelsLikeNight
             daytimeTemperature.text = dayByPosition.dayInfo.daytime.feelsLikeDaytime
-            nightWindSpeed.text = dayByPosition.dayInfo.night.windSpeedNight
-            daytimeWindSpeed.text = dayByPosition.dayInfo.daytime.windSpeedDaytime
+            nightCondition.text = getRusConditions(dayByPosition.dayInfo.night.conditionNight)
+            daytimeCondition.text = getRusConditions(dayByPosition.dayInfo.daytime.conditionDaytime)
             daytime.apply {
                 tag = position
                 setOnClickListener {
@@ -59,7 +60,7 @@ class DaysAdapter(private val forecast: List<WeatherDetailsByDay>, private val a
         }
     }
 
-    inner class ViewHold(val rootView: View) : RecyclerView.ViewHolder(rootView) {
+    inner class ViewHold(rootView: View) : RecyclerView.ViewHolder(rootView) {
         val daytime: ConstraintLayout = rootView.findViewById(R.id.daytime)
         val night: ConstraintLayout = rootView.findViewById(R.id.night)
 
@@ -68,14 +69,8 @@ class DaysAdapter(private val forecast: List<WeatherDetailsByDay>, private val a
         val nightImage: ImageView = rootView.findViewById(R.id.dayImageViewNight)
         val nightTemperature: TextView = rootView.findViewById(R.id.informationTemperatureTextViewNight)
         val daytimeTemperature: TextView = rootView.findViewById(R.id.informationTemperatureTextViewDaytime)
-        val nightWindSpeed: TextView = rootView.findViewById(R.id.informationWindSpeedTextViewNight)
-        val daytimeWindSpeed: TextView = rootView.findViewById(R.id.informationWindSpeedTextViewDaytime)
-    }
-
-
-
-    private fun loadImage(icon: String, picture: ImageView){
-        SvgLoader.pluck().with(activity.get()).load("https://yastatic.net/weather/i/icons/blueye/color/svg/$icon.svg", picture)
+        val nightCondition: TextView = rootView.findViewById(R.id.informationConditionTextViewNight)
+        val daytimeCondition: TextView = rootView.findViewById(R.id.informationConditionTextViewDaytime)
     }
 
 }

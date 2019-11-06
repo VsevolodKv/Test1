@@ -1,25 +1,41 @@
 package com.example.web
-//
-//import android.graphics.Bitmap
-//import android.graphics.BitmapFactory
-//import android.util.Log
-//import android.widget.Toast
-//import androidx.annotation.WorkerThread
-//import com.ahmadrosid.svgloader.SvgLoader
-//import java.net.HttpURLConnection
-//import java.net.URL
-//
-//fun getIcon(iconName: String): Bitmap?{
-//    var icon: Bitmap? = null
-//    val connection = URL("https://yastatic.net/weather/i/icons/blueye/color/svg/$iconName.svg").openConnection() as HttpURLConnection
-//    connection.requestMethod = "GET"
-//    connection .doInput = true
-////    Log.e("asd", connection.responseCode.toString())
-//    if (connection.responseCode == 200) {
-//        val istr = connection.inputStream
-//        val bytes = istr.readBytes()
-//
-//        icon = BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
-//    }
-//    return icon
-//}
+const val NO_DATA = "No data"
+
+fun getRusConditions(input: String): String {
+    return when(input) {
+        "clear" -> "Ясно"
+        "partly-cloudy" -> "Малооблачно"
+        "cloudy" -> "Облачно"
+        "overcast" -> "Пасмурно"
+        "partly-cloudy-and-light-rain" -> "Небольшой дождь"
+        "partly-cloudy-and-rain" -> "Дождь"
+        "overcast-and-rain" -> "Сильный дождь"
+        "overcast-thunderstorms-with-rain" -> "Сильный дождь, гроза"
+        "cloudy-and-light-rain" -> "Небольшой дождь"
+        "overcast-and-light-rain" -> "Небольшой дождь"
+        "cloudy-and-rain" -> "Дождь"
+        "overcast-and-wet-snow" -> "Дождь со снегом"
+        "partly-cloudy-and-light-snow" -> "Небольшой снег"
+        "partly-cloudy-and-snow" -> "Снег"
+        "overcast-and-snow" -> "Снегопад"
+        "cloudy-and-light-snow" -> "Небольшой снег"
+        "overcast-and-light-snow" -> "Небольшой снег"
+        "cloudy-and-snow " -> "Снег"
+        else -> NO_DATA
+    }
+}
+
+fun getRusWinDir(input: String): String {
+    return when(input) {
+        "nw" -> "северо-западное"
+        "n" -> "серевное"
+        "ne" -> "северо-восточное"
+        "e" -> "восточное"
+        "se" -> "юго-восточное"
+        "s" -> "южное"
+        "sw" -> "юго-западное"
+        "w" -> "западное"
+        "c" -> "штиль"
+        else -> NO_DATA
+    }
+}

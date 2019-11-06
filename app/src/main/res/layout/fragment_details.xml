@@ -1,226 +1,574 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/details_fragment"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
 
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginBottom="16dp">
 
-    <ProgressBar
-        android:id="@+id/progressBar"
+    android:layout_height="match_parent"
+    android:overScrollMode="never">
 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <LinearLayout
+        android:id="@+id/details_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical">
 
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
 
-      <TextView
-        android:id="@+id/humidity_text"
+            android:id="@+id/maxTemp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
 
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+            <TextView
+                android:id="@+id/tempMaxTextViewDetails"
 
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-        android:textSize="8dp"
-        android:textColor="@color/colorPrimaryDark"
-        android:text="Влажность воздуха (в процентах):"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
 
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                android:text="Максимальная температура\n для времени суток (°C):"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/humidity"
+            <TextView
+                android:id="@+id/tempMaxInformationTextViewDetails"
 
-        android:layout_width="0dp"
-        android:layout_height="24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-        android:layout_marginStart="8dp"
-        android:layout_weight="1"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="20dp"
 
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/tempMaxTextViewDetails"
+                app:layout_constraintStart_toEndOf="@+id/tempMaxTextViewDetails"
+                app:layout_constraintTop_toTopOf="@+id/tempMaxTextViewDetails" />
 
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="8dp"
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        app:layout_constraintStart_toEndOf="@+id/humidity_text"
-        app:layout_constraintTop_toTopOf="@+id/humidity_text" />
+        <androidx.constraintlayout.widget.ConstraintLayout
 
-    <TextView
-        android:id="@+id/windSpeed_text"
+            android:id="@+id/windDir"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
 
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+            <TextView
+                android:id="@+id/windDirTextViewDetails"
 
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-        android:textSize="8dp"
-        android:textColor="@color/colorPrimaryDark"
-        android:text="Скорость ветра (в м/с) :"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
 
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/humidity_text" />
+                android:text="Направление ветра:"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/windSpeed"
+            <TextView
+                android:id="@+id/windDirInformationTextViewDetails"
 
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-        android:layout_marginStart="8dp"
-        android:layout_weight="1"
+                android:layout_marginStart="4dp"
 
-        android:textSize="8dp"
-        android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/windDirTextViewDetails"
+                app:layout_constraintStart_toEndOf="@+id/windDirTextViewDetails"
+                app:layout_constraintTop_toTopOf="@+id/windDirTextViewDetails" />
 
-        app:layout_constraintStart_toEndOf="@+id/windSpeed_text"
-        app:layout_constraintTop_toTopOf="@+id/windSpeed_text" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/tempMax_text"
+        <androidx.constraintlayout.widget.ConstraintLayout
 
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+            android:id="@+id/humidity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
 
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_weight="1"
+            <TextView
+                android:id="@+id/humidityTextViewDetails"
 
-        android:text="Максимальная температура (°C) :"
-        android:textSize="8dp"
-        android:textColor="@color/colorPrimaryDark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/windSpeed_text" />
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
 
-    <TextView
-        android:id="@+id/tempMax"
+                android:text="Влажность воздуха (в процентах):"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+            <TextView
+                android:id="@+id/humidityInformationTextViewDetails"
 
-        android:layout_marginStart="8dp"
-        android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-        android:textSize="8dp"
-        android:textColor="@color/colorPrimaryDark"
+                android:layout_marginStart="4dp"
 
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/humidityTextViewDetails"
+                app:layout_constraintStart_toEndOf="@+id/humidityTextViewDetails"
+                app:layout_constraintTop_toTopOf="@+id/humidityTextViewDetails" />
 
-        app:layout_constraintStart_toEndOf="@+id/tempMax_text"
-        app:layout_constraintTop_toTopOf="@+id/tempMax_text" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/tempMin_text"
+        <androidx.constraintlayout.widget.ConstraintLayout
 
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+            android:id="@+id/windSpeed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
 
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_weight="1"
+            <TextView
+                android:id="@+id/windSpeedTextViewDetails"
 
-        android:text="Минимальная температура (°C) :"
-        android:textSize="8dp"
-        android:textColor="@color/colorPrimaryDark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-        app:layout_constraintStart_toEndOf="@+id/humidity"
-        app:layout_constraintTop_toTopOf="parent" />
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
 
-    <TextView
-        android:id="@+id/tempMin"
+                android:text="Скорость ветра (в м/с):"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+            <TextView
+                android:id="@+id/windSpeedInformationTextViewDetails"
 
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-        android:textSize="8dp"
-        android:textColor="@color/colorPrimaryDark"
+                android:layout_marginStart="4dp"
 
-        app:layout_constraintStart_toEndOf="@+id/tempMin_text"
-        app:layout_constraintTop_toTopOf="parent" />
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/windSpeedTextViewDetails"
+                app:layout_constraintStart_toEndOf="@+id/windSpeedTextViewDetails"
+                app:layout_constraintTop_toTopOf="@+id/windSpeedTextViewDetails" />
 
-    <TextView
-        android:id="@+id/feelsLike_text"
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
 
-        android:layout_marginTop="16dp"
-        android:layout_weight="1"
+            android:id="@+id/feelsLik"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
 
-        android:text="Ощущаемая температура (°C) :"
-        android:textSize="8dp"
-        android:textColor="@color/colorPrimaryDark"
+            <TextView
+                android:id="@+id/feelsLikTextViewDetails"
 
-        app:layout_constraintStart_toStartOf="@+id/tempMin_text"
-        app:layout_constraintTop_toBottomOf="@+id/tempMin_text" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-    <TextView
-        android:id="@+id/feelsLike"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
 
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+                android:text="Ощущаемая температура (°C):"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        android:layout_marginStart="8dp"
-        android:layout_weight="1"
+            <TextView
+                android:id="@+id/feelsLikInformationTextViewDetails"
 
-        android:textSize="8dp"
-        android:textColor="@color/colorPrimaryDark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-        app:layout_constraintStart_toEndOf="@+id/feelsLike_text"
-        app:layout_constraintTop_toTopOf="@+id/feelsLike_text" />
+                android:layout_marginStart="4dp"
 
-    <TextView
-        android:id="@+id/date_text"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/feelsLikTextViewDetails"
+                app:layout_constraintStart_toEndOf="@+id/feelsLikTextViewDetails"
+                app:layout_constraintTop_toTopOf="@+id/feelsLikTextViewDetails" />
 
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        android:layout_marginTop="16dp"
-        android:layout_weight="1"
+        <androidx.constraintlayout.widget.ConstraintLayout
 
-        android:text="Дата :"
-        android:textSize="8dp"
-        android:textColor="@color/colorPrimaryDark"
+            android:id="@+id/tempMin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
 
-        app:layout_constraintStart_toStartOf="@+id/tempMin_text"
-        app:layout_constraintTop_toBottomOf="@+id/feelsLike_text" />
+            <ProgressBar
+                android:id="@+id/progressBar"
 
-    <TextView
-        android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        android:layout_marginStart="8dp"
-        android:layout_weight="1"
+            <TextView
+                android:id="@+id/tempMinTextViewDetails"
 
-        android:textSize="8dp"
-        android:textColor="@color/colorPrimaryDark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-        app:layout_constraintStart_toEndOf="@+id/date_text"
-        app:layout_constraintTop_toTopOf="@+id/date_text" />
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
 
-    <Button
-        android:id="@+id/backward"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:text="Назад"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/date_text" />
+                android:text="Минимальная температура\n для времени суток (°C):"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/tempMinInformationTextViewDetails"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="20dp"
+
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/tempMinTextViewDetails"
+                app:layout_constraintStart_toEndOf="@+id/tempMinTextViewDetails"
+                app:layout_constraintTop_toTopOf="@+id/tempMinTextViewDetails" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:id="@+id/tempAvg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/tempAvgTextViewDetails"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+
+                android:text="Средняя температура\n для времени суток (°C):"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tempAvgInformationTextViewDetails"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="20dp"
+
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/tempAvgTextViewDetails"
+                app:layout_constraintStart_toEndOf="@+id/tempAvgTextViewDetails"
+                app:layout_constraintTop_toTopOf="@+id/tempAvgTextViewDetails" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:id="@+id/conditionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/conditionTextViewDetails"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+
+                android:text="Описание погоды :"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/conditionInformationTextViewDetails"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="4dp"
+
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/conditionTextViewDetails"
+                app:layout_constraintStart_toEndOf="@+id/conditionTextViewDetails"
+                app:layout_constraintTop_toTopOf="@+id/conditionTextViewDetails" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:id="@+id/windGust"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/windGustTextViewDetails"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+
+                android:text="Скорость порывов ветра (в м/с):"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/windGustInformationTextViewDetails"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="4dp"
+
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/windGustTextViewDetails"
+                app:layout_constraintStart_toEndOf="@+id/windGustTextViewDetails"
+                app:layout_constraintTop_toTopOf="@+id/windGustTextViewDetails" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:id="@+id/MaxTemp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/pressureMmTextViewDetails"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+
+                android:text="Давление (в мм рт. ст.):"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/pressureMmInformationTextViewDetails"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="4dp"
+
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/pressureMmTextViewDetails"
+                app:layout_constraintStart_toEndOf="@+id/pressureMmTextViewDetails"
+                app:layout_constraintTop_toTopOf="@+id/pressureMmTextViewDetails" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:id="@+id/pressurePa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/pressurePaTextViewDetails"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+
+                android:text="Давление (в гектопаскалях):"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/pressurePaInformationTextViewDetails"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="4dp"
+
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/pressurePaTextViewDetails"
+                app:layout_constraintStart_toEndOf="@+id/pressurePaTextViewDetails"
+                app:layout_constraintTop_toTopOf="@+id/pressurePaTextViewDetails" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:id="@+id/precMm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/precMmTextViewDetails"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+
+                android:text="Прогнозируемое\n количество осадков (в мм):"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/precMmInformationTextViewDetails"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="20dp"
+
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/precMmTextViewDetails"
+                app:layout_constraintStart_toEndOf="@+id/precMmTextViewDetails"
+                app:layout_constraintTop_toTopOf="@+id/precMmTextViewDetails" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:id="@+id/precPeriod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/precPeriodTextViewDetails"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+
+                android:text="Прогнозируемый период\n осадков (в минутах):"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/precPeriodInformationTextViewDetails"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="20dp"
+
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/precPeriodTextViewDetails"
+                app:layout_constraintStart_toEndOf="@+id/precPeriodTextViewDetails"
+                app:layout_constraintTop_toTopOf="@+id/precPeriodTextViewDetails" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/backward"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+
+            android:background="@color/yellow"
+            android:textStyle="italic"
+            android:text="Назад"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </LinearLayout>
+
+</ScrollView>

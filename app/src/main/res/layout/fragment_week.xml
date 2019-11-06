@@ -52,6 +52,7 @@
 
         android:background="@color/yellow"
         android:text="Вернуться назад"
+        android:textStyle="italic"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
