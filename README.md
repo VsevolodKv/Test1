@@ -1,1 +1,1 @@
-# AndroidTrainingRoom
+# Android test task / Kopkov Vsevolod
