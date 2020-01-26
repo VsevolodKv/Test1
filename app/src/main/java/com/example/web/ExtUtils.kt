@@ -1,8 +1,12 @@
 package com.example.web
+
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+
 const val NO_DATA = "No data"
 
 fun getRusConditions(input: String): String {
-    return when(input) {
+    return when (input) {
         "clear" -> "Ясно"
         "partly-cloudy" -> "Малооблачно"
         "cloudy" -> "Облачно"
@@ -26,7 +30,7 @@ fun getRusConditions(input: String): String {
 }
 
 fun getRusWinDir(input: String): String {
-    return when(input) {
+    return when (input) {
         "nw" -> "северо-западное"
         "n" -> "серевное"
         "ne" -> "северо-восточное"
@@ -38,4 +42,12 @@ fun getRusWinDir(input: String): String {
         "c" -> "штиль"
         else -> NO_DATA
     }
+}
+
+fun Fragment.toast(text: String) {
+    Toast.makeText(
+        activity,
+        text,
+        Toast.LENGTH_LONG
+    ).show()
 }

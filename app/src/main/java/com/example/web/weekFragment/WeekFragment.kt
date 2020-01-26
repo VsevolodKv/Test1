@@ -1,21 +1,25 @@
 package com.example.web.weekFragment
 
-import android.net.Uri
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.android_training_room.mbicycle.weather_forecast.R
 import com.example.web.BaseFragment
-import com.example.web.R
-import com.example.web.dataclasess.WeatherDetails
-import com.github.twocoffeesoneteam.glidetovectoryou.GlideToVectorYou
+import com.example.web.dataObject.WeatherRespons
+import com.example.web.detailsFragment.DetailsFragment
+import com.example.web.toast
+import com.example.web.today.TodayFragment
 import kotlinx.android.synthetic.main.fragment_week.*
 
 class WeekFragment : BaseFragment() {
+    companion object {
+        const val ARG_LAT = "ARG_LAT"
+        const val ARG_LNG = "ARG_LNG"
+    }
 
     private lateinit var viewModel: WeekFragmentViewModel
 
@@ -28,9 +32,7 @@ class WeekFragment : BaseFragment() {
             navController.popBackStack(R.id.fragment_today, false)
         }
 
-        viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(
-            WeekFragmentViewModel::class.java
-        )
+        viewModel = ViewModelProviders.of(this).get(WeekFragmentViewModel::class.java)
         viewModel.isLoading.observe(this, Observer {
             if (it) {
                 progressBarWeek.visibility = View.VISIBLE
@@ -46,40 +48,31 @@ class WeekFragment : BaseFragment() {
         viewModel.weekForecast.observe(this, Observer {
             updateUI(it)
         })
-        viewModel.refresh()
+        arguments?.let {
+            viewModel.refresh(it.getDouble(TodayFragment.ARG_LAT), it.getDouble(TodayFragment.ARG_LNG))
+        }
     }
 
-    private fun updateUI(weatherDetails: WeatherDetails) {
-
+    private fun updateUI(weatherDetails: WeatherRespons) {
         if (weatherDetails.forecasts.isNotEmpty()) {
             recycler.apply {
                 layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
                 addItemDecoration(DividerItemDecoration(context, RecyclerView.VERTICAL))
                 adapter = DaysAdapter(weatherDetails.forecasts).apply {
                     onDayTimeSelected = { dayTime ->
-                        val dataDaytime = Bundle().apply { putParcelable("data", dayTime) }
+                        val dataDaytime =
+                            Bundle().apply { putParcelable(DetailsFragment.KEY, dayTime) }
                         navController.navigate(R.id.details_fragment, dataDaytime)
                     }
-                    onNightTimeSelected = {nightTime ->
-                        val dataNightTime = Bundle().apply { putParcelable("data", nightTime) }
+                    onNightTimeSelected = { nightTime ->
+                        val dataNightTime =
+                            Bundle().apply { putParcelable(DetailsFragment.KEY, nightTime) }
                         navController.navigate(R.id.details_fragment, dataNightTime)
-                    }
-                    loadImage = {iconName, imageView ->
-                        GlideToVectorYou
-                            .init()
-                            .with(context)
-                            .load(Uri.parse("https://yastatic.net/weather/i/icons/blueye/color/svg/$iconName.svg"), imageView)
                     }
                 }
             }
         } else {
-
-            Toast.makeText(
-                activity,
-                "There is no forecasts for now...",
-                Toast.LENGTH_LONG
-            ).show()
+            toast("There is no forecasts for now...")
         }
     }
-
 }

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/fragment_today">
+    app:startDestination="@id/choosingCityFragment">
 
 
     <fragment
@@ -13,6 +13,13 @@
         <action
             android:id="@+id/action_fragment_today_to_week_fragment"
             app:destination="@id/week_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_fragment_today_to_choosingCityFragment"
+            app:destination="@id/choosingCityFragment"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
@@ -47,6 +54,19 @@
         <action
             android:id="@+id/action_week_fragment_to_details_fragment"
             app:destination="@id/details_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/choosingCityFragment"
+        android:name="com.example.web.choosingCity.ChoosingCityFragment"
+        android:label="Fragment4"
+        app:defaultNavHost="true">
+        <action
+            android:id="@+id/action_choosingCityFragment_to_fragment_today"
+            app:destination="@id/fragment_today"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"

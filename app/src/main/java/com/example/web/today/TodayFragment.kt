@@ -8,17 +8,21 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
+import com.android_training_room.mbicycle.weather_forecast.R
 import com.example.web.BaseFragment
-import com.example.web.R
-import com.example.web.dataclasess.Fact
+import com.example.web.dataObject.Fact
 import com.example.web.getRusConditions
 import com.github.twocoffeesoneteam.glidetovectoryou.GlideToVectorYou
 import kotlinx.android.synthetic.main.fragment_today.*
 
 class TodayFragment : BaseFragment() {
+    companion object {
+        const val ARG_LAT = "ARG_LAT"
+        const val ARG_LNG = "ARG_LNG"
+    }
 
-    private lateinit var viewModel: TodayViewModel
+    private lateinit var viewModel: TodayFragmentViewModel
 
     override fun getLayoutID() = R.layout.fragment_today
 
@@ -32,7 +36,8 @@ class TodayFragment : BaseFragment() {
                 )
                 startActivity(intent)
             }
-        }else {
+        } else {
+            progressBar.visibility = View.GONE
             Toast.makeText(
                 context,
                 "No connection",
@@ -40,15 +45,16 @@ class TodayFragment : BaseFragment() {
             ).show()
         }
 
-        weekInfo.setOnClickListener {
-            navController.navigate(R.id.action_fragment_today_to_week_fragment)
+        weekInfo.setOnClickListener() {
+            navController.navigate(R.id.action_fragment_today_to_week_fragment, arguments)
         }
 
-        viewModel = ViewModelProvider(
-            this,
-            ViewModelProvider.NewInstanceFactory()
-        ).get(TodayViewModel::class.java)
-        viewModel.refresh()
+        viewModel = ViewModelProviders.of(this).get(TodayFragmentViewModel::class.java)
+
+        arguments?.let {
+            viewModel.refresh(it.getDouble(ARG_LAT), it.getDouble(ARG_LNG))
+        }
+
         viewModel.isLoading.observe(this, Observer<Boolean> {
             if (it) {
                 progressBar.visibility = View.VISIBLE
@@ -65,20 +71,7 @@ class TodayFragment : BaseFragment() {
         viewModel.factSubscription.observe(viewLifecycleOwner, Observer<Fact> { fact ->
 
             if (fact != null) {
-
-                tempTextView.text = fact.temp
-                humidity.text = fact.humidity
-                windSpeed.text = fact.windSpeed
-                feelsLikeInformationTextView.text = fact.feelsLike
-                conditionInformationTextView.text = getRusConditions(fact.condition)
-
-                GlideToVectorYou
-                    .init()
-                    .with(context)
-                    .load(
-                        Uri.parse("https://yastatic.net/weather/i/icons/blueye/color/svg/${fact.icon}.svg"),
-                        image_today
-                    )
+                todayInfo(fact)
             } else {
 
                 Toast.makeText(
@@ -91,7 +84,24 @@ class TodayFragment : BaseFragment() {
     }
 
     private fun isOnline(): Boolean {
-        val connectivityManager = context?.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val connectivityManager =
+            context?.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         return connectivityManager.activeNetworkInfo != null
+    }
+
+    private fun todayInfo(fact: Fact) {
+        tempTextView.text = fact.temp.toString()
+        humidity.text = fact.humidity.toString()
+        windSpeed.text = fact.windSpeed.toString()
+        feelsLikeInformationTextView.text = fact.feelsLike.toString()
+        conditionInformationTextView.text = getRusConditions(fact.condition)
+
+        GlideToVectorYou
+            .init()
+            .with(context)
+            .load(
+                Uri.parse("https://yastatic.net/weather/i/icons/blueye/color/svg/${fact.icon}.svg"),
+                image_today
+            )
     }
 }

@@ -1,27 +1,32 @@
 package com.example.web.weekFragment
 
+import android.app.Application
+import android.widget.Toast
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import com.example.web.dataclasess.WeatherDetails
+import com.example.web.dataObject.WeatherRespons
 import com.example.web.model.WebModel
 
-class WeekFragmentViewModel : ViewModel() {
+class WeekFragmentViewModel(app: Application) : AndroidViewModel(app) {
     val isLoading = MutableLiveData<Boolean>()
-    val weekForecast = MutableLiveData<WeatherDetails>()
+    val weekForecast = MutableLiveData<WeatherRespons>()
+    private val model = WebModel()
 
     init {
         isLoading.value = false
     }
 
 
-    internal fun refresh() {
+    internal fun refresh(lat: Double, lng: Double) {
         isLoading.postValue(true)
-        WebModel.getDataString(object : WebModel.ResponseResult {
-            override fun onFetchResult(result: WeatherDetails) {
-                weekForecast.postValue(result)
+        model.getWeatherAsync(lat, lng) { data ->
+            data?.let {
+                weekForecast.postValue(it)
                 isLoading.postValue(false)
+                return@getWeatherAsync
             }
-        })
+            Toast.makeText(getApplication(), "no data", Toast.LENGTH_LONG).show()
+        }
     }
 
 }

@@ -4,15 +4,19 @@ import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.android_training_room.mbicycle.weather_forecast.R
 import com.example.web.BaseFragment
-import com.example.web.R
-import com.example.web.dataclasess.Daytime
-import com.example.web.dataclasess.Night
+import com.example.web.dataObject.Day
+import com.example.web.dataObject.Night
 import com.example.web.getRusConditions
 import com.example.web.getRusWinDir
 import kotlinx.android.synthetic.main.fragment_details.*
 
 class DetailsFragment : BaseFragment(){
+
+    companion object{
+        const val KEY = "data"
+    }
 
     private lateinit var viewModel: DetailsFragmentViewModel
 
@@ -29,7 +33,7 @@ class DetailsFragment : BaseFragment(){
             ViewModelProvider.NewInstanceFactory()
         ).get(DetailsFragmentViewModel::class.java)
 
-        viewModel.setData(arguments?.getParcelable("data"))
+        viewModel.setData(arguments?.getParcelable(KEY))
 
         viewModel.dayTime.observe(this, Observer {
             updateUI(it)
@@ -40,35 +44,35 @@ class DetailsFragment : BaseFragment(){
         })
     }
 
-    private fun updateUI(daytime: Daytime){
-        humidityInformationTextViewDetails.text = daytime.humidityDaytime
-        conditionInformationTextViewDetails.text = getRusConditions(daytime.conditionDaytime)
-        tempMaxInformationTextViewDetails.text = daytime.tempMaxDaytime
-        windDirInformationTextViewDetails.text = getRusWinDir(daytime.windDirDaytime)
-        windSpeedInformationTextViewDetails.text = daytime.windSpeedDaytime
-        feelsLikInformationTextViewDetails.text = daytime.feelsLikeDaytime
-        tempMinInformationTextViewDetails.text = daytime.tempMinDaytime
-        tempAvgInformationTextViewDetails.text = daytime.tempAvgDaytime
-        windGustInformationTextViewDetails.text = daytime.windGustDaytime
-        pressureMmInformationTextViewDetails.text = daytime.pressureMmDaytime
-        pressurePaInformationTextViewDetails.text = daytime.pressurePaDaytime
-        precMmInformationTextViewDetails.text = daytime.precMmDaytime
-        precPeriodInformationTextViewDetails.text = daytime.precPeriodDaytime
+    private fun updateUI(daytime: Day){
+        humidityInformationTextViewDetails.text = daytime.humidity.toString()
+        conditionInformationTextViewDetails.text = getRusConditions(daytime.condition)
+        tempMaxInformationTextViewDetails.text = daytime.tempMax.toString()
+        windDirInformationTextViewDetails.text = getRusWinDir(daytime.windDir)
+        windSpeedInformationTextViewDetails.text = daytime.windSpeed.toString()
+        feelsLikInformationTextViewDetails.text = daytime.feelsLike.toString()
+        tempMinInformationTextViewDetails.text = daytime.tempMin.toString()
+        tempAvgInformationTextViewDetails.text = daytime.tempAvg.toString()
+        windGustInformationTextViewDetails.text = daytime.windGust.toString()
+        pressureMmInformationTextViewDetails.text = daytime.pressureMm.toString()
+        pressurePaInformationTextViewDetails.text = daytime.pressurePa.toString()
+        precMmInformationTextViewDetails.text = daytime.precMm.toString()
+        precPeriodInformationTextViewDetails.text = daytime.precPeriod.toString()
     }
 
     private fun updateUI(night: Night){
-        humidityInformationTextViewDetails.text = night.humidityNight
-        conditionInformationTextViewDetails.text = getRusConditions(night.conditionNight)
-        tempMaxInformationTextViewDetails.text = night.tempMaxNight
-        windDirInformationTextViewDetails.text = getRusWinDir(night.windDirNight)
-        windSpeedInformationTextViewDetails.text = night.windSpeedNight
-        feelsLikInformationTextViewDetails.text = night.feelsLikeNight
-        tempMinInformationTextViewDetails.text = night.tempMinNight
-        tempAvgInformationTextViewDetails.text = night.tempAvgNight
-        windGustInformationTextViewDetails.text = night.windGustNight
-        pressureMmInformationTextViewDetails.text = night.pressureMmNight
-        pressurePaInformationTextViewDetails.text = night.pressurePaNight
-        precMmInformationTextViewDetails.text = night.precMmNight
-        precPeriodInformationTextViewDetails.text = night.precPeriodNight
+        humidityInformationTextViewDetails.text = night.humidity.toString()
+        conditionInformationTextViewDetails.text = getRusConditions(night.condition)
+        tempMaxInformationTextViewDetails.text = night.tempMax.toString()
+        windDirInformationTextViewDetails.text = getRusWinDir(night.windDir)
+        windSpeedInformationTextViewDetails.text = night.windSpeed.toString()
+        feelsLikInformationTextViewDetails.text = night.feelsLike.toString()
+        tempMinInformationTextViewDetails.text = night.tempMin.toString()
+        tempAvgInformationTextViewDetails.text = night.tempAvg.toString()
+        windGustInformationTextViewDetails.text = night.windGust.toString()
+        pressureMmInformationTextViewDetails.text = night.pressureMm.toString()
+        pressurePaInformationTextViewDetails.text = night.pressurePa.toString()
+        precMmInformationTextViewDetails.text = night.precMm.toString()
+        precPeriodInformationTextViewDetails.text = night.precPeriod.toString()
     }
 }
