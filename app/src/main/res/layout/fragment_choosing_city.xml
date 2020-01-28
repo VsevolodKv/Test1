@@ -1,58 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
 
-    <TextView
-        android:id="@+id/choosingCityTextView"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll"
+    android:layout_width="match_parent"
+    android:background="@color/light_blue"
+
+    android:layout_height="match_parent"
+    android:overScrollMode="never">
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAllCaps="true"
-        android:textStyle="bold"
-        android:textColor="@color/colorPrimaryDark"
-        android:gravity="center_horizontal"
-        android:text="Выберете город в котором \n хотите узнать погоду:" />
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/chooseVitebsk"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="Витебск" />
 
-    <Button
-        android:id="@+id/chooseGomel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="Гомель" />
+        <TextView
+            android:id="@+id/choosingCityTextView"
 
-    <Button
-        android:id="@+id/chooseMinsk"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="Минск" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
 
-    <Button
-        android:id="@+id/chooseMogilev"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="Могилёв" />
+            android:gravity="center_horizontal"
+            android:textColor="@color/white_blue"
 
-    <Button
-        android:id="@+id/chooseBrest"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="Брест" />
+            android:layout_marginTop="15dp"
+            android:text="@string/choose_city"
+            android:textAllCaps="true"
+            android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/chooseGrodno"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="Гродно" />
+        <Button
+            android:id="@+id/chooseVitebsk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
 
-</LinearLayout>
+            android:layout_marginEnd="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="15dp"
+
+            android:background="@drawable/button"
+            android:textColor="@color/white_blue"
+            android:text="@string/Vitebsk"
+            android:textAllCaps="false"
+            tools:ignore="RtlSymmetry" />
+
+        <Button
+            android:id="@+id/chooseGomel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginEnd="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="15dp"
+
+            android:background="@drawable/button"
+            android:textColor="@color/white_blue"
+            android:text="@string/Gomel"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/chooseMinsk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginEnd="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="15dp"
+
+            android:background="@drawable/button"
+            android:textColor="@color/white_blue"
+            android:text="@string/Minsk"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/chooseMogilev"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginEnd="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="15dp"
+
+            android:background="@drawable/button"
+            android:textColor="@color/white_blue"
+            android:text="@string/Mogilev"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/chooseBrest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginEnd="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="15dp"
+
+            android:background="@drawable/button"
+            android:textColor="@color/white_blue"
+            android:text="@string/Brest"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/chooseGrodno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginEnd="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="15dp"
+
+            android:background="@drawable/button"
+            android:textColor="@color/white_blue"
+            android:text="@string/Grodno"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+
+</ScrollView>

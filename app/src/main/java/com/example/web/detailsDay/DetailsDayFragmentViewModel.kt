@@ -1,4 +1,4 @@
-package com.example.web.detailsFragment
+package com.example.web.detailsDay
 
 import android.os.Parcelable
 import androidx.lifecycle.MutableLiveData
@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import com.example.web.dataObject.Day
 import com.example.web.dataObject.Night
 
-class DetailsFragmentViewModel: ViewModel()  {
+class DetailsDayFragmentViewModel: ViewModel()  {
 
     val dayTime = MutableLiveData<Day>()
     val nightTime = MutableLiveData<Night>()

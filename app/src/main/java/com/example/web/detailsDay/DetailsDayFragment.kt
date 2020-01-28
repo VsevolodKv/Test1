@@ -1,4 +1,4 @@
-package com.example.web.detailsFragment
+package com.example.web.detailsDay
 
 import android.os.Bundle
 import android.view.View
@@ -12,26 +12,29 @@ import com.example.web.getRusConditions
 import com.example.web.getRusWinDir
 import kotlinx.android.synthetic.main.fragment_details.*
 
-class DetailsFragment : BaseFragment(){
+class DetailsDayFragment : BaseFragment(){
 
     companion object{
         const val KEY = "data"
     }
 
-    private lateinit var viewModel: DetailsFragmentViewModel
+    private lateinit var viewModel: DetailsDayFragmentViewModel
 
     override fun getLayoutID() = R.layout.fragment_details
 
+    override fun onResume() {
+        super.onResume()
+        setTolBarTitle("@string/detailed_weather_description")
+        setBackButtonVisibility(true)
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        backward.setOnClickListener {
-            navController.popBackStack(R.id.week_fragment, false)
-        }
 
         viewModel = ViewModelProvider(
             this,
             ViewModelProvider.NewInstanceFactory()
-        ).get(DetailsFragmentViewModel::class.java)
+        ).get(DetailsDayFragmentViewModel::class.java)
 
         viewModel.setData(arguments?.getParcelable(KEY))
 
@@ -75,4 +78,5 @@ class DetailsFragment : BaseFragment(){
         precMmInformationTextViewDetails.text = night.precMm.toString()
         precPeriodInformationTextViewDetails.text = night.precPeriod.toString()
     }
+
 }

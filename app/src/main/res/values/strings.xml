@@ -1,3 +1,49 @@
 <resources>
-    <string name="app_name">Myapp</string>
+    <string name="app_name">Test</string>
+
+    <string name="there_no_forecasts">There is no forecasts for now…</string>
+    
+    <!--TodayFragment-->
+    <string name="forecast_for_today">Прогноз на сегодня</string>
+    <string name="description">Описание :</string>
+    <string name="temperature">Температура (°C) :</string>
+    <string name="air_humidity">Влажность воздуха\n (в процентах):</string>
+    <string name="wind_speed">Скорость ветра (в м/с) :</string>
+    <string name="yandex_weather">Яндекс погода</string>
+    <string name="seven_day_forecast">Прогноз на 7 дней</string>
+    <string name="perceived_temperature">Ощущаемая\n температура (°C):</string>
+    <string name="weather_today">Погода сегодня</string>
+    
+    <!--DayWeek-->
+    <string name="date">Дата :</string>
+    <string name="short_description">Краткое описание:</string>
+    <string name="daytime">Дневное время</string>
+    <string name="night_time">Ночьное время</string>
+    <string name="weather_for_week">Погода на неделю</string>
+    <string name="click">Нажмите на заинтересовавшую позицию \n для подробной информации</string>
+
+    <!--DetailsFragment-->
+    <string name="maximum_temperature">Максимальная температура\n для времени суток (°C):</string>
+    <string name="direction_wind">Направление ветра:</string>
+    <string name="air_humidity_">Влажность воздуха (в процентах):</string>
+    <string name="perceived_temperature_">Ощущаемая температура (°C):</string>
+    <string name="minimum_temperature">Минимальная температура\n для времени суток (°C):</string>
+    <string name="average_temperature">Средняя температура\n для времени суток (°C):</string>
+    <string name="weather_description">Описание погоды :</string>
+    <string name="gust_speed">Скорость порывов ветра (в м/с):</string>
+    <string name="pressure">Давление (в мм рт. ст.):</string>
+    <string name="pressure_g">Давление (в гектопаскалях):</string>
+    <string name="rainfall">Прогнозируемое\n количество осадков (в мм):</string>
+    <string name="precipitation_period">Прогнозируемый период\n осадков (в минутах):</string>
+    <string name="detailed_weather_description">Подробное описание погоды (за данное время суток)</string>
+
+    <!--ChoosingCity-->
+    <string name="choose_city">Выберете город в котором \n хотите узнать погоду:</string>
+    <string name="Vitebsk">Витебск</string>
+    <string name="Gomel">Гомель</string>
+    <string name="Minsk">Минск</string>
+    <string name="Mogilev">Могилёв</string>
+    <string name="Brest">Брест</string>
+    <string name="Grodno">Гродно</string>
+    <string name="choosing_city">Выберите город</string>
 </resources>

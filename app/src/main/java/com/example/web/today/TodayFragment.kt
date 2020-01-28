@@ -22,9 +22,16 @@ class TodayFragment : BaseFragment() {
         const val ARG_LNG = "ARG_LNG"
     }
 
+
     private lateinit var viewModel: TodayFragmentViewModel
 
     override fun getLayoutID() = R.layout.fragment_today
+
+    override fun onResume() {
+        super.onResume()
+        setTolBarTitle(R.string.forecast_for_today.toString())
+        setBackButtonVisibility(true)
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -55,7 +62,7 @@ class TodayFragment : BaseFragment() {
             viewModel.refresh(it.getDouble(ARG_LAT), it.getDouble(ARG_LNG))
         }
 
-        viewModel.isLoading.observe(this, Observer<Boolean> {
+        viewModel.isLoading.observe(viewLifecycleOwner, Observer<Boolean> {
             if (it) {
                 progressBar.visibility = View.VISIBLE
                 details.isClickable = false
@@ -69,11 +76,9 @@ class TodayFragment : BaseFragment() {
 
 
         viewModel.factSubscription.observe(viewLifecycleOwner, Observer<Fact> { fact ->
-
             if (fact != null) {
                 todayInfo(fact)
             } else {
-
                 Toast.makeText(
                     activity,
                     "There is no forecasts for now...",
@@ -104,4 +109,6 @@ class TodayFragment : BaseFragment() {
                 image_today
             )
     }
+
+
 }

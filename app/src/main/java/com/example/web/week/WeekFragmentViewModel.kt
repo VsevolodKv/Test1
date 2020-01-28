@@ -1,4 +1,4 @@
-package com.example.web.weekFragment
+package com.example.web.week
 
 import android.app.Application
 import android.widget.Toast

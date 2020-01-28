@@ -11,6 +11,12 @@ class ChoosingCityFragment : BaseFragment() {
 
     override fun getLayoutID() = R.layout.fragment_choosing_city
 
+    override fun onResume() {
+        super.onResume()
+        setTolBarTitle(R.string.choosing_city.toString())
+        setBackButtonVisibility(false)
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         chooseGomel.setOnClickListener {

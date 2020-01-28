@@ -1,4 +1,4 @@
-package com.example.web.weekFragment
+package com.example.web.week
 
 import android.net.Uri
 import android.view.LayoutInflater

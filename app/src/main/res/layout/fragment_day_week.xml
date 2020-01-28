@@ -5,6 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/light_blue"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
@@ -35,10 +36,10 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
 
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/white_blue"
             android:textStyle="bold"
             android:textSize="18dp"
-            android:text="Дата :"
+            android:text="@string/date"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -50,7 +51,7 @@
 
             android:layout_marginStart="8dp"
 
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/white_blue"
             android:textSize="18dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/dateTextView"
@@ -66,8 +67,8 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
 
-            android:text="Ощущаемая\n температура (°C) :"
-            android:textColor="@color/colorPrimaryDark"
+            android:text="@string/perceived_temperature"
+            android:textColor="@color/white_blue"
             android:textStyle="italic"
             app:layout_constraintBottom_toTopOf="@+id/textConditionViewDaytime"
             app:layout_constraintStart_toEndOf="@+id/dayImageViewDaytime"
@@ -82,7 +83,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="20dp"
 
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/white_blue"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/textTemperatureViewDaytime"
             app:layout_constraintStart_toEndOf="@+id/textTemperatureViewDaytime"
@@ -97,8 +98,8 @@
             android:layout_marginStart="16dp"
             android:layout_marginBottom="16dp"
 
-            android:text="Краткое описание:"
-            android:textColor="@color/colorPrimaryDark"
+            android:text="@string/short_description"
+            android:textColor="@color/white_blue"
             android:textStyle="italic"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/dayImageViewDaytime"
@@ -114,7 +115,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="4dp"
 
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/white_blue"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/dayImageViewDaytime"
@@ -129,8 +130,8 @@
             android:layout_marginTop="8dp"
 
             android:gravity="center"
-            android:text="Дневное время"
-            android:textColor="@color/colorPrimaryDark"
+            android:text="@string/daytime"
+            android:textColor="@color/white_blue"
             android:textSize="18dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/dayImageViewDaytime"
@@ -142,7 +143,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
 
-            android:background="@color/colorPrimaryDark"
+            android:background="@color/gray_blue"
 
             app:layout_constraintBottom_toTopOf="@+id/textViewDaytime"
             app:layout_constraintEnd_toEndOf="parent"
@@ -154,7 +155,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/colorPrimaryDark"/>
+        android:background="@color/gray_blue"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/night"
@@ -187,8 +188,8 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
 
-            android:text="Ощущаемая\n температура (°C) :"
-            android:textColor="@color/colorPrimaryDark"
+            android:text="@string/perceived_temperature"
+            android:textColor="@color/white_blue"
             android:textStyle="italic"
             app:layout_constraintBottom_toTopOf="@+id/textConditionViewNight"
             app:layout_constraintStart_toEndOf="@+id/dayImageViewNight"
@@ -203,7 +204,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="20dp"
 
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/white_blue"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/textTemperatureViewNight"
             app:layout_constraintStart_toEndOf="@+id/textTemperatureViewNight"
@@ -218,8 +219,8 @@
             android:layout_marginStart="16dp"
             android:layout_marginBottom="16dp"
 
-            android:text="Краткое описание:"
-            android:textColor="@color/colorPrimaryDark"
+            android:text="@string/short_description"
+            android:textColor="@color/white_blue"
             android:textStyle="italic"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/dayImageViewNight"
@@ -235,7 +236,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="4dp"
 
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/white_blue"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/dayImageViewNight"
@@ -250,8 +251,8 @@
             android:layout_marginTop="8dp"
 
             android:gravity="center"
-            android:text="Ночьное время"
-            android:textColor="@color/colorPrimaryDark"
+            android:text="@string/night_time"
+            android:textColor="@color/white_blue"
             android:textSize="18dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/dayImageViewNight"

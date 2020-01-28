@@ -28,7 +28,7 @@
 
     <fragment
         android:id="@+id/details_fragment"
-        android:name="com.example.web.detailsFragment.DetailsFragment"
+        android:name="com.example.web.detailsDay.DetailsDayFragment"
         android:label="Fragment2">
 
         <action
@@ -42,7 +42,7 @@
 
     <fragment
         android:id="@+id/week_fragment"
-        android:name="com.example.web.weekFragment.WeekFragment"
+        android:name="com.example.web.week.WeekFragment"
         android:label="Fragment3">
         <action
             android:id="@+id/action_week_fragment_to_fragment_today"

@@ -2,6 +2,9 @@ package com.example.web
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.ImageView
+import android.widget.TextView
 import com.android_training_room.mbicycle.weather_forecast.R
 
 class MainActivity : AppCompatActivity() {
@@ -10,4 +13,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
+
+
+
+
+
 }

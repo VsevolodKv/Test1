@@ -4,15 +4,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/scroll"
+    android:background="@color/light_blue"
     android:layout_width="match_parent"
 
     android:layout_height="match_parent"
     android:overScrollMode="never">
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/fragment_today"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <ProgressBar
             android:id="@+id/progressBar"
@@ -26,6 +28,7 @@
             app:layout_constraintHorizontal_bias="0.465"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
 
         <ImageView
             android:id="@+id/image_today"
@@ -47,14 +50,15 @@
             android:layout_height="wrap_content"
 
             android:layout_marginStart="166dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="187dp"
 
-            android:text="Прогноз на сегодня"
-            android:textColor="@color/colorPrimaryDark"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="187dp"
+            android:text="@string/forecast_for_today"
+            android:textColor="@color/white_blue"
             android:textSize="22dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.513"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -67,8 +71,8 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
 
-            android:text="Описание :"
-            android:textColor="@color/colorPrimaryDark"
+            android:text="@string/description"
+            android:textColor="@color/white_blue"
             android:textStyle="italic"
             app:layout_constraintStart_toEndOf="@+id/image_today"
             app:layout_constraintTop_toBottomOf="@+id/text" />
@@ -81,7 +85,7 @@
 
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/white_blue"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/textTemp"
             app:layout_constraintStart_toStartOf="@+id/conditionTextView"
@@ -97,8 +101,8 @@
             android:layout_marginStart="16dp"
 
             android:layout_marginTop="8dp"
-            android:text="Температура (°C) :"
-            android:textColor="@color/colorPrimaryDark"
+            android:text="@string/temperature"
+            android:textColor="@color/white_blue"
             android:textStyle="italic"
             app:layout_constraintStart_toEndOf="@+id/image_today"
             app:layout_constraintTop_toBottomOf="@+id/conditionInformationTextView" />
@@ -111,7 +115,7 @@
 
             android:layout_marginStart="4dp"
 
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/white_blue"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/textTemp"
             app:layout_constraintStart_toEndOf="@+id/textTemp"
@@ -126,8 +130,8 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
 
-            android:text="Влажность воздуха\n (в процентах):"
-            android:textColor="@color/colorPrimaryDark"
+            android:text="@string/air_humidity"
+            android:textColor="@color/white_blue"
             android:textStyle="italic"
             app:layout_constraintStart_toEndOf="@+id/image_today"
             app:layout_constraintTop_toBottomOf="@+id/textTemp" />
@@ -142,7 +146,7 @@
 
             android:layout_marginTop="20dp"
             android:layout_marginBottom="8dp"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/white_blue"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/humidityTextView"
             app:layout_constraintStart_toEndOf="@+id/humidityTextView"
@@ -157,8 +161,8 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
 
-            android:text="Скорость ветра (в м/с) :"
-            android:textColor="@color/colorPrimaryDark"
+            android:text="@string/wind_speed"
+            android:textColor="@color/white_blue"
             android:textStyle="italic"
             app:layout_constraintStart_toEndOf="@+id/image_today"
             app:layout_constraintTop_toBottomOf="@+id/humidityTextView" />
@@ -171,7 +175,7 @@
 
             android:layout_marginStart="4dp"
 
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/white_blue"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/windSpeed_text"
             app:layout_constraintStart_toEndOf="@+id/windSpeed_text"
@@ -184,9 +188,11 @@
             android:layout_height="wrap_content"
 
             android:layout_marginStart="32dp"
+            android:padding="7dp"
 
-            android:background="@color/yellow"
-            android:text="Яндекс погода"
+            android:background="@drawable/button"
+            android:text="@string/yandex_weather"
+            android:textColor="@color/white_blue"
             android:textStyle="italic"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/weekInfo" />
@@ -199,10 +205,13 @@
 
             android:layout_marginStart="24dp"
             android:layout_marginTop="24dp"
+            android:padding="7dp"
 
-            android:background="@color/yellow"
-            android:text="Прогноз на 7 дней"
+
+            android:background="@drawable/button"
+            android:text="@string/seven_day_forecast"
             android:textAllCaps="false"
+            android:textColor="@color/white_blue"
             android:textStyle="italic"
             app:layout_constraintStart_toEndOf="@+id/details"
             app:layout_constraintTop_toBottomOf="@+id/feelsLikeTextView" />
@@ -215,8 +224,8 @@
 
             android:layout_marginTop="16dp"
 
-            android:text="Ощущаемая\n температура °C)"
-            android:textColor="@color/colorPrimaryDark"
+            android:text="@string/perceived_temperature"
+            android:textColor="@color/white_blue"
             android:textStyle="italic"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0"
@@ -233,7 +242,7 @@
             android:layout_marginStart="4dp"
             android:layout_marginTop="20dp"
 
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/white_blue"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/feelsLikeTextView"
             app:layout_constraintStart_toEndOf="@+id/feelsLikeTextView"

@@ -1,4 +1,4 @@
-package com.example.web.weekFragment
+package com.example.web.week
 
 import android.os.Bundle
 import android.view.View
@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android_training_room.mbicycle.weather_forecast.R
 import com.example.web.BaseFragment
 import com.example.web.dataObject.WeatherRespons
-import com.example.web.detailsFragment.DetailsFragment
+import com.example.web.detailsDay.DetailsDayFragment
 import com.example.web.toast
 import com.example.web.today.TodayFragment
 import kotlinx.android.synthetic.main.fragment_week.*
@@ -25,27 +25,28 @@ class WeekFragment : BaseFragment() {
 
     override fun getLayoutID() = R.layout.fragment_week
 
+    override fun onResume() {
+        super.onResume()
+        setTolBarTitle("@string/weather_today")
+        setBackButtonVisibility(true)
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        back_button.setOnClickListener {
-            navController.popBackStack(R.id.fragment_today, false)
-        }
 
         viewModel = ViewModelProviders.of(this).get(WeekFragmentViewModel::class.java)
-        viewModel.isLoading.observe(this, Observer {
+        viewModel.isLoading.observe(viewLifecycleOwner, Observer {
             if (it) {
                 progressBarWeek.visibility = View.VISIBLE
-                back_button.isClickable = false
                 recycler.isClickable = false
             } else {
                 progressBarWeek.visibility = View.GONE
-                back_button.isClickable = true
                 recycler.isClickable = true
             }
         })
 
-        viewModel.weekForecast.observe(this, Observer {
+        viewModel.weekForecast.observe(viewLifecycleOwner, Observer {
             updateUI(it)
         })
         arguments?.let {
@@ -61,12 +62,12 @@ class WeekFragment : BaseFragment() {
                 adapter = DaysAdapter(weatherDetails.forecasts).apply {
                     onDayTimeSelected = { dayTime ->
                         val dataDaytime =
-                            Bundle().apply { putParcelable(DetailsFragment.KEY, dayTime) }
+                            Bundle().apply { putParcelable(DetailsDayFragment.KEY, dayTime) }
                         navController.navigate(R.id.details_fragment, dataDaytime)
                     }
                     onNightTimeSelected = { nightTime ->
                         val dataNightTime =
-                            Bundle().apply { putParcelable(DetailsFragment.KEY, nightTime) }
+                            Bundle().apply { putParcelable(DetailsDayFragment.KEY, nightTime) }
                         navController.navigate(R.id.details_fragment, dataNightTime)
                     }
                 }
