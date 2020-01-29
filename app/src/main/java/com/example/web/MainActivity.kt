@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
-import com.android_training_room.mbicycle.weather_forecast.R
+import com.android_test_tack.mbicycle.weather_forecast.R
 
 class MainActivity : AppCompatActivity() {
 

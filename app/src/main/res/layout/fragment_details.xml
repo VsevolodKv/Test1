@@ -14,7 +14,7 @@
         android:id="@+id/details_fragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="@dimen/margin_x_mid"
         android:orientation="vertical">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,7 +22,7 @@
             android:id="@+id/maxTemp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="@dimen/margin_x_mid">
 
             <TextView
                 android:id="@+id/tempMaxTextViewDetails"
@@ -30,9 +30,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginStart="@dimen/margin_x_mid"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_small"
 
                 android:text="@string/maximum_temperature"
                 android:textColor="@color/white_blue"
@@ -47,8 +47,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginStart="@dimen/margin_x_small"
+                android:layout_marginTop="@dimen/margin_x1_large"
 
                 android:textColor="@color/white_blue"
                 android:textStyle="bold"
@@ -63,7 +63,7 @@
             android:id="@+id/windDir"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="@dimen/margin_x_mid">
 
             <TextView
                 android:id="@+id/windDirTextViewDetails"
@@ -71,9 +71,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginStart="@dimen/margin_x_mid"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_small"
 
                 android:text="@string/direction_wind"
                 android:textColor="@color/white_blue"
@@ -88,7 +88,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_marginStart="4dp"
+                android:layout_marginStart="@dimen/margin_x_small"
 
                 android:textColor="@color/white_blue"
                 android:textStyle="bold"
@@ -103,7 +103,7 @@
             android:id="@+id/humidity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="@dimen/margin_x_mid">
 
             <TextView
                 android:id="@+id/humidityTextViewDetails"
@@ -111,9 +111,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginStart="@dimen/margin_x_mid"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_small"
 
                 android:text="@string/air_humidity_"
                 android:textColor="@color/white_blue"
@@ -128,7 +128,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_marginStart="4dp"
+                android:layout_marginStart="@dimen/margin_x_small"
 
                 android:textColor="@color/white_blue"
                 android:textStyle="bold"
@@ -143,7 +143,7 @@
             android:id="@+id/windSpeed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="@dimen/margin_x_mid">
 
             <TextView
                 android:id="@+id/windSpeedTextViewDetails"
@@ -151,9 +151,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginStart="@dimen/margin_x_mid"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_small"
 
                 android:text="@string/wind_speed"
                 android:textColor="@color/white_blue"
@@ -168,7 +168,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_marginStart="4dp"
+                android:layout_marginStart="@dimen/margin_x_small"
 
                 android:textColor="@color/white_blue"
                 android:textStyle="bold"
@@ -183,7 +183,7 @@
             android:id="@+id/feelsLik"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="@dimen/margin_x_mid">
 
             <TextView
                 android:id="@+id/feelsLikTextViewDetails"
@@ -191,9 +191,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginStart="@dimen/margin_x_mid"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_small"
 
                 android:text="@string/perceived_temperature_"
                 android:textColor="@color/white_blue"
@@ -208,7 +208,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_marginStart="4dp"
+                android:layout_marginStart="@dimen/margin_x_small"
 
                 android:textColor="@color/white_blue"
                 android:textStyle="bold"
@@ -223,7 +223,7 @@
             android:id="@+id/tempMin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="@dimen/margin_x_mid">
 
             <ProgressBar
                 android:id="@+id/progressBar"
@@ -243,9 +243,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginStart="@dimen/margin_x_mid"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_small"
 
                 android:text="@string/minimum_temperature"
                 android:textColor="@color/white_blue"
@@ -260,8 +260,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginStart="@dimen/margin_x_small"
+                android:layout_marginTop="@dimen/margin_x1_large"
 
                 android:textColor="@color/white_blue"
                 android:textStyle="bold"
@@ -276,7 +276,7 @@
             android:id="@+id/tempAvg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="@dimen/margin_x_mid">
 
             <TextView
                 android:id="@+id/tempAvgTextViewDetails"
@@ -284,9 +284,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginStart="@dimen/margin_x_mid"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_small"
 
                 android:text="@string/average_temperature"
                 android:textColor="@color/white_blue"
@@ -301,8 +301,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginStart="@dimen/margin_x_small"
+                android:layout_marginTop="@dimen/margin_x1_large"
 
                 android:textColor="@color/white_blue"
                 android:textStyle="bold"
@@ -317,7 +317,7 @@
             android:id="@+id/conditionTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="@dimen/margin_x_mid">
 
             <TextView
                 android:id="@+id/conditionTextViewDetails"
@@ -325,9 +325,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginStart="@dimen/margin_x_mid"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_small"
 
                 android:text="@string/weather_description"
                 android:textColor="@color/white_blue"
@@ -342,7 +342,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_marginStart="4dp"
+                android:layout_marginStart="@dimen/margin_x_small"
 
                 android:textColor="@color/white_blue"
                 android:textStyle="bold"
@@ -357,7 +357,7 @@
             android:id="@+id/windGust"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="@dimen/margin_x_mid">
 
             <TextView
                 android:id="@+id/windGustTextViewDetails"
@@ -365,9 +365,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginStart="@dimen/margin_x_mid"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_small"
 
                 android:text="@string/gust_speed"
                 android:textColor="@color/white_blue"
@@ -382,7 +382,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_marginStart="4dp"
+                android:layout_marginStart="@dimen/margin_x_small"
 
                 android:textColor="@color/white_blue"
                 android:textStyle="bold"
@@ -397,7 +397,7 @@
             android:id="@+id/MaxTemp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="@dimen/margin_x_mid">
 
             <TextView
                 android:id="@+id/pressureMmTextViewDetails"
@@ -405,9 +405,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginStart="@dimen/margin_x_mid"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_small"
 
                 android:text="@string/pressure"
                 android:textColor="@color/white_blue"
@@ -422,7 +422,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_marginStart="4dp"
+                android:layout_marginStart="@dimen/margin_x_small"
 
                 android:textColor="@color/white_blue"
                 android:textStyle="bold"
@@ -437,7 +437,7 @@
             android:id="@+id/pressurePa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="@dimen/margin_x_mid">
 
             <TextView
                 android:id="@+id/pressurePaTextViewDetails"
@@ -445,9 +445,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginStart="@dimen/margin_x_mid"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_small"
 
                 android:text="@string/pressure_g"
                 android:textColor="@color/white_blue"
@@ -462,7 +462,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_marginStart="4dp"
+                android:layout_marginStart="@dimen/margin_x_small"
 
                 android:textColor="@color/white_blue"
                 android:textStyle="bold"
@@ -477,7 +477,7 @@
             android:id="@+id/precMm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="@dimen/margin_x_mid">
 
             <TextView
                 android:id="@+id/precMmTextViewDetails"
@@ -485,9 +485,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginStart="@dimen/margin_x_mid"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_small"
 
                 android:text="@string/rainfall"
                 android:textColor="@color/white_blue"
@@ -502,8 +502,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginStart="@dimen/margin_x_small"
+                android:layout_marginTop="@dimen/margin_x1_large"
 
                 android:textColor="@color/white_blue"
                 android:textStyle="bold"
@@ -518,7 +518,7 @@
             android:id="@+id/precPeriod"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="@dimen/margin_x_mid">
 
             <TextView
                 android:id="@+id/precPeriodTextViewDetails"
@@ -526,9 +526,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginStart="@dimen/margin_x_mid"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_small"
 
                 android:text="@string/precipitation_period"
                 android:textColor="@color/white_blue"
@@ -543,8 +543,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginStart="@dimen/margin_x_small"
+                android:layout_marginTop="@dimen/margin_x1_large"
 
                 android:textColor="@color/white_blue"
                 android:textStyle="bold"

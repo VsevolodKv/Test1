@@ -9,7 +9,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.android_training_room.mbicycle.weather_forecast.R
+import com.android_test_tack.mbicycle.weather_forecast.R
 import com.example.web.BaseFragment
 import com.example.web.dataObject.Fact
 import com.example.web.getRusConditions
@@ -20,6 +20,7 @@ class TodayFragment : BaseFragment() {
     companion object {
         const val ARG_LAT = "ARG_LAT"
         const val ARG_LNG = "ARG_LNG"
+        const val ARG_CITY_NAME = "NAME"
     }
 
 
@@ -29,7 +30,7 @@ class TodayFragment : BaseFragment() {
 
     override fun onResume() {
         super.onResume()
-        setTolBarTitle(R.string.forecast_for_today.toString())
+        setTolBarTitle(R.string.forecast_for_today)
         setBackButtonVisibility(true)
     }
 
@@ -60,6 +61,7 @@ class TodayFragment : BaseFragment() {
 
         arguments?.let {
             viewModel.refresh(it.getDouble(ARG_LAT), it.getDouble(ARG_LNG))
+            text.setText(it.getString(ARG_CITY_NAME))
         }
 
         viewModel.isLoading.observe(viewLifecycleOwner, Observer<Boolean> {
@@ -81,7 +83,7 @@ class TodayFragment : BaseFragment() {
             } else {
                 Toast.makeText(
                     activity,
-                    "There is no forecasts for now...",
+                    R.string.there_no_forecasts,
                     Toast.LENGTH_LONG
                 ).show()
             }

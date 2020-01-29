@@ -1,53 +1,47 @@
 package com.example.web.detailsDay
 
 import android.os.Bundle
+import android.os.Parcelable
 import android.view.View
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.android_training_room.mbicycle.weather_forecast.R
+import com.android_test_tack.mbicycle.weather_forecast.R
 import com.example.web.BaseFragment
+import com.example.web.dataObject.BaseDayNight
 import com.example.web.dataObject.Day
 import com.example.web.dataObject.Night
 import com.example.web.getRusConditions
 import com.example.web.getRusWinDir
 import kotlinx.android.synthetic.main.fragment_details.*
 
-class DetailsDayFragment : BaseFragment(){
+class DetailsDayFragment : BaseFragment() {
 
-    companion object{
+    companion object {
         const val KEY = "data"
     }
-
-    private lateinit var viewModel: DetailsDayFragmentViewModel
 
     override fun getLayoutID() = R.layout.fragment_details
 
     override fun onResume() {
         super.onResume()
-        setTolBarTitle("@string/detailed_weather_description")
+        setTolBarTitle(R.string.detailed_weather_description)
         setBackButtonVisibility(true)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel = ViewModelProvider(
-            this,
-            ViewModelProvider.NewInstanceFactory()
-        ).get(DetailsDayFragmentViewModel::class.java)
-
-        viewModel.setData(arguments?.getParcelable(KEY))
-
-        viewModel.dayTime.observe(this, Observer {
-            updateUI(it)
-        })
-
-        viewModel.nightTime.observe(this, Observer {
-            updateUI(it)
-        })
+        arguments?.let {
+            val parcelable = it.getParcelable<BaseDayNight>(KEY)
+            when (parcelable) {
+                is Day -> updateUI(parcelable)
+                is Night -> updateUI(parcelable)
+            }
+        }
     }
 
-    private fun updateUI(daytime: Day){
+    private fun updateUI(daytime: Day) {
         humidityInformationTextViewDetails.text = daytime.humidity.toString()
         conditionInformationTextViewDetails.text = getRusConditions(daytime.condition)
         tempMaxInformationTextViewDetails.text = daytime.tempMax.toString()
@@ -63,7 +57,7 @@ class DetailsDayFragment : BaseFragment(){
         precPeriodInformationTextViewDetails.text = daytime.precPeriod.toString()
     }
 
-    private fun updateUI(night: Night){
+    private fun updateUI(night: Night) {
         humidityInformationTextViewDetails.text = night.humidity.toString()
         conditionInformationTextViewDetails.text = getRusConditions(night.condition)
         tempMaxInformationTextViewDetails.text = night.tempMax.toString()

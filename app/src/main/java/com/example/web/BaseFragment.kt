@@ -10,7 +10,7 @@ import androidx.annotation.CallSuper
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import com.android_training_room.mbicycle.weather_forecast.R
+import com.android_test_tack.mbicycle.weather_forecast.R
 
 abstract class BaseFragment : Fragment() {
     protected lateinit var navController: NavController
@@ -30,8 +30,8 @@ abstract class BaseFragment : Fragment() {
     }
 
 
-    fun setTolBarTitle(textTitle: String) {
-        toolbarTitle.text = textTitle
+    fun setTolBarTitle(textTitle: Int) {
+        toolbarTitle.setText(textTitle)
     }
 
     fun setBackButtonVisibility(visibility: Boolean){

@@ -18,10 +18,10 @@
         <ImageView
             android:id="@+id/dayImageViewDaytime"
 
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="@dimen/avatar_size_small"
+            android:layout_height="@dimen/avatar_size_small"
 
-            android:layout_marginStart="24dp"
+            android:layout_marginStart="@dimen/margin_x_large"
 
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewDaytime"
@@ -33,12 +33,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="@dimen/margin_xx1_large"
+            android:layout_marginTop="@dimen/margin_x_mid"
 
             android:textColor="@color/white_blue"
             android:textStyle="bold"
-            android:textSize="18dp"
+            android:textSize="@dimen/font_x_middle"
             android:text="@string/date"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -64,8 +64,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="@dimen/margin_x_mid"
+            android:layout_marginTop="@dimen/margin_small"
 
             android:text="@string/perceived_temperature"
             android:textColor="@color/white_blue"
@@ -80,8 +80,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_x1_large"
 
             android:textColor="@color/white_blue"
             android:textStyle="bold"
@@ -95,8 +95,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
-            android:layout_marginStart="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginStart="@dimen/margin_x_mid"
+            android:layout_marginBottom="@dimen/margin_x_mid"
 
             android:text="@string/short_description"
             android:textColor="@color/white_blue"
@@ -111,9 +111,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="4dp"
+            android:layout_marginStart="@dimen/margin_x_mid"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginBottom="@dimen/margin_x_small"
 
             android:textColor="@color/white_blue"
             android:textStyle="bold"
@@ -127,12 +127,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/margin_small"
 
             android:gravity="center"
             android:text="@string/daytime"
             android:textColor="@color/white_blue"
-            android:textSize="18dp"
+            android:textSize="@dimen/font_x_middle"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/dayImageViewDaytime"
             app:layout_constraintEnd_toEndOf="parent"
@@ -170,10 +170,10 @@
         <ImageView
             android:id="@+id/dayImageViewNight"
 
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="@dimen/avatar_size_small"
+            android:layout_height="@dimen/avatar_size_small"
 
-            android:layout_marginStart="24dp"
+            android:layout_marginStart="@dimen/margin_x_large"
 
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewNight"
@@ -185,8 +185,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="@dimen/margin_x_mid"
+            android:layout_marginTop="@dimen/margin_small"
 
             android:text="@string/perceived_temperature"
             android:textColor="@color/white_blue"
@@ -201,8 +201,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_x1_large"
 
             android:textColor="@color/white_blue"
             android:textStyle="bold"
@@ -216,8 +216,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
-            android:layout_marginStart="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginStart="@dimen/margin_x_mid"
+            android:layout_marginBottom="@dimen/margin_x_mid"
 
             android:text="@string/short_description"
             android:textColor="@color/white_blue"
@@ -232,9 +232,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="4dp"
+            android:layout_marginStart="@dimen/margin_x_mid"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginBottom="@dimen/margin_x_small"
 
             android:textColor="@color/white_blue"
             android:textStyle="bold"
@@ -248,18 +248,26 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/margin_small"
 
             android:gravity="center"
             android:text="@string/night_time"
             android:textColor="@color/white_blue"
-            android:textSize="18dp"
+            android:textSize="@dimen/font_x_middle"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/dayImageViewNight"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/dayImageViewNight"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_blue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

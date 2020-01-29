@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.android_training_room.mbicycle.weather_forecast.R
+import com.android_test_tack.mbicycle.weather_forecast.R
 import com.example.web.BaseFragment
 import com.example.web.dataObject.WeatherRespons
 import com.example.web.detailsDay.DetailsDayFragment
@@ -16,10 +16,6 @@ import com.example.web.today.TodayFragment
 import kotlinx.android.synthetic.main.fragment_week.*
 
 class WeekFragment : BaseFragment() {
-    companion object {
-        const val ARG_LAT = "ARG_LAT"
-        const val ARG_LNG = "ARG_LNG"
-    }
 
     private lateinit var viewModel: WeekFragmentViewModel
 
@@ -27,7 +23,7 @@ class WeekFragment : BaseFragment() {
 
     override fun onResume() {
         super.onResume()
-        setTolBarTitle("@string/weather_today")
+        setTolBarTitle(R.string.weather_for_week)
         setBackButtonVisibility(true)
     }
 
@@ -73,7 +69,7 @@ class WeekFragment : BaseFragment() {
                 }
             }
         } else {
-            toast("There is no forecasts for now...")
+            toast(R.string.there_no_forecasts)
         }
     }
 }

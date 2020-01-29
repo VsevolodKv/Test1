@@ -35,7 +35,7 @@
     <string name="pressure_g">Давление (в гектопаскалях):</string>
     <string name="rainfall">Прогнозируемое\n количество осадков (в мм):</string>
     <string name="precipitation_period">Прогнозируемый период\n осадков (в минутах):</string>
-    <string name="detailed_weather_description">Подробное описание погоды (за данное время суток)</string>
+    <string name="detailed_weather_description">Подробное описание</string>
 
     <!--ChoosingCity-->
     <string name="choose_city">Выберете город в котором \n хотите узнать погоду:</string>

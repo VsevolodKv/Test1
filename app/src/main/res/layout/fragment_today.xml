@@ -20,7 +20,7 @@
             android:id="@+id/progressBar"
 
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
 
             android:visibility="invisible"
             app:layout_constraintBottom_toTopOf="@+id/weekInfo"
@@ -33,15 +33,16 @@
         <ImageView
             android:id="@+id/image_today"
 
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="@dimen/avatar_size_mid"
+            android:layout_height="@dimen/avatar_size_mid"
 
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="@dimen/margin_x_mid"
 
             app:layout_constraintBottom_toTopOf="@+id/details"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text"
-            tools:srcCompat="@tools:sample/avatars[3]" />
+            tools:srcCompat="@tools:sample/avatars[3]"
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:id="@+id/text"
@@ -49,13 +50,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:layout_marginStart="166dp"
+            android:layout_marginStart="@dimen/margin_xxxx_large"
 
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="187dp"
-            android:text="@string/forecast_for_today"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_xxxxEnd_large"
             android:textColor="@color/white_blue"
-            android:textSize="22dp"
+            android:textSize="@dimen/margin_x2_large"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.513"
@@ -68,8 +68,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="@dimen/margin_x_mid"
+            android:layout_marginTop="@dimen/margin_small"
 
             android:text="@string/description"
             android:textColor="@color/white_blue"
@@ -83,8 +83,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginBottom="@dimen/margin_small"
             android:textColor="@color/white_blue"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/textTemp"
@@ -98,9 +98,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="@dimen/margin_x_mid"
 
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/margin_small"
             android:text="@string/temperature"
             android:textColor="@color/white_blue"
             android:textStyle="italic"
@@ -113,7 +113,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
-            android:layout_marginStart="4dp"
+            android:layout_marginStart="@dimen/margin_x_small"
 
             android:textColor="@color/white_blue"
             android:textStyle="bold"
@@ -127,8 +127,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="@dimen/margin_x_mid"
+            android:layout_marginTop="@dimen/margin_x_mid"
 
             android:text="@string/air_humidity"
             android:textColor="@color/white_blue"
@@ -140,12 +140,12 @@
             android:id="@+id/humidity"
 
             android:layout_width="0dp"
-            android:layout_height="24dp"
+            android:layout_height="@dimen/margin_xx1_large"
 
-            android:layout_marginStart="4dp"
+            android:layout_marginStart="@dimen/margin_x_small"
 
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginTop="@dimen/margin_x1_large"
+            android:layout_marginBottom="@dimen/margin_small"
             android:textColor="@color/white_blue"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/humidityTextView"
@@ -158,8 +158,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="@dimen/margin_x_mid"
+            android:layout_marginTop="@dimen/margin_x_mid"
 
             android:text="@string/wind_speed"
             android:textColor="@color/white_blue"
@@ -173,7 +173,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
-            android:layout_marginStart="4dp"
+            android:layout_marginStart="@dimen/margin_x_small"
 
             android:textColor="@color/white_blue"
             android:textStyle="bold"
@@ -187,13 +187,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:layout_marginStart="32dp"
-            android:padding="7dp"
+            android:layout_marginStart="@dimen/margin_xx2_large"
+            android:padding="@dimen/padding_x_mid"
 
             android:background="@drawable/button"
             android:text="@string/yandex_weather"
+            android:textAllCaps="false"
             android:textColor="@color/white_blue"
-            android:textStyle="italic"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/weekInfo" />
 
@@ -203,16 +204,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="24dp"
-            android:padding="7dp"
+            android:layout_marginStart="@dimen/margin_xx1_large"
+            android:layout_marginTop="@dimen/margin_xx1_large"
+            android:padding="@dimen/padding_x_mid"
 
 
             android:background="@drawable/button"
             android:text="@string/seven_day_forecast"
             android:textAllCaps="false"
             android:textColor="@color/white_blue"
-            android:textStyle="italic"
+            android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/details"
             app:layout_constraintTop_toBottomOf="@+id/feelsLikeTextView" />
 
@@ -222,7 +223,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/margin_x_mid"
 
             android:text="@string/perceived_temperature"
             android:textColor="@color/white_blue"
@@ -239,8 +240,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="@dimen/margin_x_small"
+            android:layout_marginTop="@dimen/margin_x1_large"
 
             android:textColor="@color/white_blue"
             android:textStyle="bold"

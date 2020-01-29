@@ -44,7 +44,7 @@ fun getRusWinDir(input: String): String {
     }
 }
 
-fun Fragment.toast(text: String) {
+fun Fragment.toast(text: Int) {
     Toast.makeText(
         activity,
         text,

@@ -21,23 +21,26 @@
             android:clickable="true"
             android:contentDescription="@null"
             android:focusable="true"
-            android:paddingStart="13dp"
-            android:paddingTop="19dp"
-            android:paddingBottom="19dp"
+            android:paddingStart="@dimen/padding_large"
+            android:paddingTop="@dimen/padding_x_large"
+            android:paddingBottom="@dimen/padding_x_large"
             android:src="@drawable/ic_back_arrow_white"
             android:visibility="gone" />
 
         <TextView
             android:id="@+id/toolbar_title"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
             android:layout_centerInParent="true"
             android:ellipsize="end"
             android:maxLines="1"
-            android:paddingStart="76dp"
-            android:paddingEnd="76dp"
+            android:paddingStart="@dimen/padding_xxx_large"
+            android:paddingEnd="@dimen/padding_xxx_large"
+            android:textStyle="bold"
             android:textColor="@color/white_blue"
-            android:textSize="21dp" />
+            android:textSize="@dimen/font_title" />
 
     </RelativeLayout>
 

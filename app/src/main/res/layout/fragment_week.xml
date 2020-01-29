@@ -17,7 +17,7 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
 
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="@dimen/margin_small"
         android:gravity="center_horizontal"
         android:text="@string/click"
         android:textAllCaps="true"
@@ -46,7 +46,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
 
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="@dimen/margin_small"
         android:fadingEdge="none"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

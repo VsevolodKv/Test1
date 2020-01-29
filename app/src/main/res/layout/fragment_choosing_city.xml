@@ -24,20 +24,24 @@
             android:gravity="center_horizontal"
             android:textColor="@color/white_blue"
 
-            android:layout_marginTop="15dp"
+            android:textSize="@dimen/font_x_middle"
+            android:layout_marginTop="@dimen/margin_large"
             android:text="@string/choose_city"
             android:textAllCaps="true"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/chooseVitebsk"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            android:layout_marginEnd="30dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginEnd="@dimen/margin_xx_large"
+            android:layout_marginStart="@dimen/margin_xx_large"
+            android:layout_marginTop="@dimen/margin_large"
 
+            android:textStyle="bold"
+            android:textSize="@dimen/font_middle"
             android:background="@drawable/button"
             android:textColor="@color/white_blue"
             android:text="@string/Vitebsk"
@@ -46,13 +50,16 @@
 
         <Button
             android:id="@+id/chooseGomel"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            android:layout_marginEnd="30dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginEnd="@dimen/margin_xx_large"
+            android:layout_marginStart="@dimen/margin_xx_large"
+            android:layout_marginTop="@dimen/margin_large"
 
+            android:textStyle="bold"
+            android:textSize="@dimen/font_middle"
             android:background="@drawable/button"
             android:textColor="@color/white_blue"
             android:text="@string/Gomel"
@@ -60,13 +67,16 @@
 
         <Button
             android:id="@+id/chooseMinsk"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            android:layout_marginEnd="30dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginEnd="@dimen/margin_xx_large"
+            android:layout_marginStart="@dimen/margin_xx_large"
+            android:layout_marginTop="@dimen/margin_large"
 
+            android:textStyle="bold"
+            android:textSize="@dimen/font_middle"
             android:background="@drawable/button"
             android:textColor="@color/white_blue"
             android:text="@string/Minsk"
@@ -74,13 +84,16 @@
 
         <Button
             android:id="@+id/chooseMogilev"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            android:layout_marginEnd="30dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginEnd="@dimen/margin_xx_large"
+            android:layout_marginStart="@dimen/margin_xx_large"
+            android:layout_marginTop="@dimen/margin_large"
 
+            android:textStyle="bold"
+            android:textSize="@dimen/font_middle"
             android:background="@drawable/button"
             android:textColor="@color/white_blue"
             android:text="@string/Mogilev"
@@ -88,13 +101,16 @@
 
         <Button
             android:id="@+id/chooseBrest"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            android:layout_marginEnd="30dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginEnd="@dimen/margin_xx_large"
+            android:layout_marginStart="@dimen/margin_xx_large"
+            android:layout_marginTop="@dimen/margin_large"
 
+            android:textStyle="bold"
+            android:textSize="@dimen/font_middle"
             android:background="@drawable/button"
             android:textColor="@color/white_blue"
             android:text="@string/Brest"
@@ -102,13 +118,16 @@
 
         <Button
             android:id="@+id/chooseGrodno"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            android:layout_marginEnd="30dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginEnd="@dimen/margin_xx_large"
+            android:layout_marginStart="@dimen/margin_xx_large"
+            android:layout_marginTop="@dimen/margin_large"
 
+            android:textStyle="bold"
+            android:textSize="@dimen/font_middle"
             android:background="@drawable/button"
             android:textColor="@color/white_blue"
             android:text="@string/Grodno"

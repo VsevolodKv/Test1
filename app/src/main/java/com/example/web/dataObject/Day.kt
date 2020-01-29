@@ -35,7 +35,7 @@ class Day(
     val precMm: Double,
     @SerializedName("prec_period")
     val precPeriod: Double
-) : Parcelable {
+) :BaseDayNight(), Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readDouble(),
         parcel.readDouble(),

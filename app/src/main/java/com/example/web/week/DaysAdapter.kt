@@ -8,7 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
-import com.android_training_room.mbicycle.weather_forecast.R
+import com.android_test_tack.mbicycle.weather_forecast.R
 import com.example.web.dataObject.Day
 import com.example.web.dataObject.forecasts
 import com.example.web.dataObject.Night
@@ -23,7 +23,7 @@ class DaysAdapter(private val forecast: List<forecasts>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHold {
         val rootView =
-            LayoutInflater.from(parent.context).inflate(R.layout.fragment_day_week, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.list_itom_day_week, parent, false)
         return ViewHold(rootView)
     }
 

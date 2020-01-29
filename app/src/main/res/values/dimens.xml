@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_xxxxEnd_large">187dp</dimen>
+    <dimen name="margin_xxxx_large">166dp</dimen>
+    <dimen name="margin_x_large">19dp</dimen>
+    <dimen name="margin_x1_large">20dp</dimen>
+    <dimen name="margin_x2_large">22dp</dimen>
+    <dimen name="margin_xx1_large">24dp</dimen>
+    <dimen name="margin_xx2_large">32dp</dimen>
+    <dimen name="margin_xx_large">30dp</dimen>
+    <dimen name="margin_3x1_large">76dp</dimen>
+    <dimen name="margin_large">15dp</dimen>
+    <dimen name="margin_mid">13dp</dimen>
+    <dimen name="margin_x_mid">16dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_x_small">4dp</dimen>
+    <dimen name="padding_xxx_large">76dp</dimen>
+    <dimen name="padding_x_large">19dp</dimen>
+    <dimen name="padding_large">13dp</dimen>
+    <dimen name="padding_mid">9dp</dimen>
+    <dimen name="padding_x_mid">7dp</dimen>
+
+    <dimen name="font_xx_small">11sp</dimen>
+    <dimen name="font_x_small">13.5sp</dimen>
+    <dimen name="font_small">15sp</dimen>
+    <dimen name="font_x_middle">18sp</dimen>
+    <dimen name="font_middle">17.5sp</dimen>
+    <dimen name="font_title">22sp</dimen>
+
+    <dimen name="small_button_height">36dp</dimen>
+
+    <dimen name="avatar_size_small">80dp</dimen>
+    <dimen name="avatar_size_mid">120dp</dimen>
+    <dimen name="button_size_small">80dp</dimen>
+
+    <dimen name="size_preferences_title">40dp</dimen>
+    <dimen name="size_preferences_item">40dp</dimen>
+    <dimen name="field_size_instructions_pref">100dp</dimen>
+
+    <dimen name="order_detail_date_label_size">110dp</dimen>
+    <dimen name="padding_dialog">10dp</dimen>
+    <dimen name="padding_msg_dialog">3dp</dimen>
+</resources>
